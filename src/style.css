@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?gwknhc');
+    src:  url('fonts/icomoon.eot?gwknhc#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?gwknhc') format('truetype'),
+      url('fonts/icomoon.woff?gwknhc') format('woff'),
+      url('fonts/icomoon.svg?gwknhc#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-home:before {
+    content: "\e900";
+  }
+  .icon-pencil:before {
+    content: "\e905";
+  }
+  .icon-image:before {
+    content: "\e90d";
+  }
+  .icon-camera:before {
+    content: "\e90f";
+  }
+  .icon-mobile:before {
+    content: "\e958";
+  }
+  .icon-undo2:before {
+    content: "\e967";
+  }
+  .icon-redo2:before {
+    content: "\e968";
+  }
+  .icon-bubble:before {
+    content: "\e96b";
+  }
+  .icon-bubbles:before {
+    content: "\e96c";
+  }
+  .icon-bubbles2:before {
+    content: "\e96d";
+  }
+  .icon-bubble2:before {
+    content: "\e96e";
+  }
+  .icon-bubbles3:before {
+    content: "\e96f";
+  }
+  .icon-user:before {
+    content: "\e971";
+  }
+  .icon-users:before {
+    content: "\e972";
+  }
+  .icon-user-plus:before {
+    content: "\e973";
+  }
+  .icon-user-check:before {
+    content: "\e975";
+  }
+  .icon-user-tie:before {
+    content: "\e976";
+  }
+  .icon-spinner11:before {
+    content: "\e984";
+  }
+  .icon-lock:before {
+    content: "\e98f";
+  }
+  .icon-unlocked:before {
+    content: "\e990";
+  }
+  .icon-cog:before {
+    content: "\e994";
+  }
+  .icon-cogs:before {
+    content: "\e995";
+  }
+  .icon-bin:before {
+    content: "\e9ac";
+  }
+  .icon-list:before {
+    content: "\e9ba";
+  }
+  .icon-menu3:before {
+    content: "\e9bf";
+  }
+  .icon-star-full:before {
+    content: "\e9d9";
+  }
+  .icon-heart:before {
+    content: "\e9da";
+  }
+  .icon-warning:before {
+    content: "\ea07";
+  }
+  .icon-loop2:before {
+    content: "\ea2e";
+  }
+  .icon-circle-down:before {
+    content: "\ea43";
+  }
+  .icon-mail4:before {
+    content: "\ea86";
+  }
+  .icon-google-plus:before {
+    content: "\ea8b";
+  }
+  
+  /* Las lineas que estan comentadas, es para que vean un ejemplo de como 
+  podemos utilizar los iconos */
+
+  /* .icon-heart{
+    width: 20px;
+    height: 20px;
+  }
+  .icon-heart:hover{
+      color: red;
+  } */
+
+  
