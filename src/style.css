@@ -133,4 +133,24 @@
       color: red;
   } */
 
-  
+  :root{
+--color-header-footer: linear-gradient(0deg, rgba(205, 208, 60, 0.3), rgba(205, 208, 60, 0.3)),
+  linear-gradient(92.95deg, rgba(230, 58, 47, 0.2) 47.55%, rgba(119, 102, 102, 0) 74.23%),
+  linear-gradient(0deg, rgba(237, 191, 101, 0.8), rgba(237, 191, 101, 0.8)),
+  linear-gradient(0deg, #0EE9EF, #0EE9EF);
+
+--font-text-natural: 'Prompt', sans-serif;
+--font-title: 'Ubuntu', sans-serif;
+--font-small-text : 'Work Sans', sans-serif;
+--background-color: #ffff;
+--color-text-imputs: #A9A5A5;
+--color-backgroud-imputs:rgba(196, 196, 196, 0.3);
+--color-background-banners: rgba(240, 238, 238, 0.9);
+--color-title: #FCD536;
+--button-hover: rgba(193, 153, 10, 0.95); 
+--color-text-white:#ffff;
+      
+}
+
+
+
