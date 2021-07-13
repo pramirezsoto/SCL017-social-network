@@ -186,8 +186,8 @@ header {
   height: 96px;
   left: 0px;
   top: 0px;
-  background: linear-gradient(0deg, rgba(205, 208, 60, 0.3), rgba(205, 208, 60, 0.3)), linear-gradient(92.95deg, rgba(230, 58, 47, 0.2) 47.55%, rgba(119, 102, 102, 0) 74.23%), linear-gradient(0deg, rgba(237, 191, 101, 0.8), rgba(237, 191, 101, 0.8)), #0EE9EF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: var(--color-header-footer);
+  box-shadow: var(--box-shadow);
 }
 
 header img {
@@ -204,8 +204,8 @@ footer {
   height: 96px;
   left: 0px;
   top: 487px;
-  background: linear-gradient(0deg, rgba(205, 208, 60, 0.3), rgba(205, 208, 60, 0.3)), linear-gradient(92.95deg, rgba(230, 58, 47, 0.2) 47.55%, rgba(119, 102, 102, 0) 74.23%), linear-gradient(0deg, rgba(237, 191, 101, 0.8), rgba(237, 191, 101, 0.8)), #0EE9EF;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: var(--color-header-footer);
+  box-shadow: var(--color-header-footer);
 }
 
 footer p {
