@@ -1,0 +1,459 @@
+html {
+  height: 100%;
+}
+
+main {
+  height: 400px;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?vtzdfx');
+  src:  url('fonts/icomoon.eot?vtzdfx#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?vtzdfx') format('truetype'),
+    url('fonts/icomoon.woff?vtzdfx') format('woff'),
+    url('fonts/icomoon.svg?vtzdfx#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e900";
+}
+.icon-newspaper:before {
+  content: "\e904";
+}
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-image:before {
+  content: "\e90d";
+}
+.icon-camera:before {
+  content: "\e90f";
+}
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-mobile:before {
+  content: "\e958";
+}
+.icon-undo2:before {
+  content: "\e967";
+}
+.icon-redo2:before {
+  content: "\e968";
+}
+.icon-bubble:before {
+  content: "\e96b";
+}
+.icon-bubbles:before {
+  content: "\e96c";
+}
+.icon-bubbles2:before {
+  content: "\e96d";
+}
+.icon-bubble2:before {
+  content: "\e96e";
+}
+.icon-bubbles3:before {
+  content: "\e96f";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-users:before {
+  content: "\e972";
+}
+.icon-user-plus:before {
+  content: "\e973";
+}
+.icon-user-check:before {
+  content: "\e975";
+}
+.icon-user-tie:before {
+  content: "\e976";
+}
+.icon-spinner11:before {
+  content: "\e984";
+}
+.icon-key:before {
+  content: "\e98d";
+}
+.icon-lock:before {
+  content: "\e98f";
+}
+.icon-unlocked:before {
+  content: "\e990";
+}
+.icon-cog:before {
+  content: "\e994";
+}
+.icon-cogs:before {
+  content: "\e995";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-bin2:before {
+  content: "\e9ad";
+}
+.icon-switch:before {
+  content: "\e9b6";
+}
+.icon-list:before {
+  content: "\e9ba";
+}
+.icon-menu3:before {
+  content: "\e9bf";
+}
+.icon-sphere:before {
+  content: "\e9c9";
+}
+.icon-brightness-contrast:before {
+  content: "\e9d6";
+}
+.icon-star-full:before {
+  content: "\e9d9";
+}
+.icon-heart:before {
+  content: "\e9da";
+}
+.icon-warning:before {
+  content: "\ea07";
+}
+.icon-enter:before {
+  content: "\ea13";
+}
+.icon-exit:before {
+  content: "\ea14";
+}
+.icon-loop2:before {
+  content: "\ea2e";
+}
+.icon-circle-down:before {
+  content: "\ea43";
+}
+.icon-share:before {
+  content: "\ea7d";
+}
+.icon-mail4:before {
+  content: "\ea86";
+}
+.icon-google-plus:before {
+  content: "\ea8b";
+}
+.icon-flickr:before {
+  content: "\eaa3";
+}
+.icon-flickr2:before {
+  content: "\eaa4";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+
+
+/* Las lineas que estan comentadas, es para que vean un ejemplo de como 
+  podemos utilizar los iconos */
+
+/* .icon-heart{
+    width: 20px;
+    height: 20px;
+  }
+  .icon-heart:hover{
+      color: red;
+  } */
+
+:root {
+  --color-header-footer: linear-gradient(0deg, rgba(205, 208, 60, 0.8), rgba(205, 208, 60, 0.8)), linear-gradient(92.95deg, rgba(230, 58, 47, 0.2) 47.55%, rgba(119, 102, 102, 0) 74.23%), linear-gradient(0deg, rgba(237, 191, 101, 0.7), rgba(237, 191, 101, 0.7)), #0EE9EF;
+  --box-shadow: inset 0px 4px 4px rgb(0, 0, 0);
+  --font-text-natural: 'Prompt', sans-serif;
+  --font-title: 'Ubuntu', sans-serif;
+  --font-small-text: 'Work Sans', sans-serif;
+  --color-font-small-text: #000000;
+  --background-color: #ffff;
+  --color-text-imputs: #A9A5A5;
+  --color-backgroud-imputs: rgba(196, 196, 196, 0.3);
+  --color-background-banners: rgba(240, 238, 238, 0.9);
+  --color-title: #FCD536;
+  --button-hover: rgba(193, 153, 10, 0.95);
+  --color-text-white: #ffff;
+}
+
+header {
+  width: 100%;
+  height: 96px;
+  left: 0px;
+  top: 0px;
+  background: var(--color-header-footer);
+  box-shadow: var(--box-shadow);
+}
+
+header img {
+  width: 159px;
+  height: 136px;
+  left: 0px;
+  top: 0px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 96px;
+  left: 0px;
+  top: 487px;
+  background: var(--color-header-footer);
+  box-shadow: var(--color-header-footer);
+}
+
+footer p {
+  width: 569px;
+  height: 27px;
+  left: 37px;
+  top: 527px;
+  font-family: Prompt;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFE0;
+  padding: 30px;
+}
+
+.time-line {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.banner-left {
+  position: absolute;
+  width: 15%;
+  height: 100%;
+  background: var(--color-background-banners);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  grid-column-start: 1;
+}
+
+.banner-right {
+  position: relative;
+  width: 65%;
+  height: 100%;
+  background: var(--color-background-banners);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-left: auto;
+  grid-column-start: 4;
+}
+
+.icon-users {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+}
+
+.icon-mobile {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+}
+
+.icon-lock {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+}
+
+.icon-pencil {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+}
+
+#email {
+  width: 303px;
+  height: 33px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: Prompt;
+  font-style: italic;
+  font-size: 16px;
+}
+
+#password {
+  width: 303px;
+  height: 33px;
+  margin-top: 20px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: Prompt;
+  font-style: italic;
+  font-size: 16px;
+}
+
+#iniciar {
+  margin-top: 30px;
+  width: 220px;
+  height: 35px;
+  background: #FFFFFF;
+  border: 1px solid #FCD536;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+#iniciarConGoogle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  width: 303px;
+  height: 33px;
+  background: #FFFFFF;
+  border: 1px solid #35A853;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: Prompt;
+  font-style: italic;
+  font-size: 16px;
+
+}
+
+#iniciarConGoogle img {
+  width: 22px;
+  height: 23px;
+  margin-right: 15px;
+  margin-block-start: 2px;
+  
+}
+
+
+#root .contenedor-izquierdo {
+  margin-top: 10px;
+  width: 404px;
+  height: 473px;
+}
+
+#root .contenedor-izquierdo img {
+  width: 326px;
+  height: 196px;
+  margin-left: 20px;
+}
+
+#root .contenedor-izquierdo .texto-izquierdo {
+  width: 291px;
+  height: 207px;
+  font-family: Prompt;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  display: flex;
+  text-align: center;
+  color: #000000;
+  font-family: Ubuntu;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+#root .contenedor-derecho {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 404px;
+  height: 473px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 15px;
+}
+
+#root .contenedor-derecho p {
+  width: 182px;
+  height: 37px;
+  font-family: Ubuntu;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+  color: #000000;
+  mix-blend-mode: normal;
+  font-family: Prompt;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+#root .contenedor-derecho .iniciarSesion {
+  width: 250px;
+  height: 35px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  color: #000000;
+  mix-blend-mode: normal;
+  font-family: Prompt;
+  font-style: italic;
+  margin-top: 40px;
+}
+
+#root .contenedor-derecho h3 {
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-top: 40px;
+}
+
+#root .contenedor-derecho h3 .aquí {
+  margin-left: 2px;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
