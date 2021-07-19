@@ -15,8 +15,8 @@ import {createUserWithPassword, signInWithPassword} from './lib/auth/autheticati
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-// createUserWithPassword("quijadabnicolea@gmail.com", "123456", "nicole");
-signInWithPassword("quijadabnicolea@gmail.com", "123456");
+createUserWithPassword("quijadabnicolea@gmail.com", "123456", "nicole");
+// signInWithPassword("quijadabnicolea@gmail.com", "123456");
 
 
 init();
