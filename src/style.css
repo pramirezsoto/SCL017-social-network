@@ -2,9 +2,9 @@ html {
   height: 100%;
 }
 
-main {
+/* main {
   height: 400px;
-}
+} */
 
 @font-face {
   font-family: 'icomoon';
@@ -250,6 +250,7 @@ footer p {
   position: absolute;
   width: 15%;
   height: 100%;
+  font-family: var(--font-text-natural);
   background: var(--color-background-banners);
   border: 1px solid #000000;
   box-sizing: border-box;
@@ -263,6 +264,10 @@ footer p {
   position: relative;
   width: 65%;
   height: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #000000;
+  font-family: var(--font-text-natural);
   background: var(--color-background-banners);
   border: 1px solid #000000;
   box-sizing: border-box;
@@ -295,6 +300,12 @@ footer p {
 }
 
 .icon-pencil {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+}
+.icon-home{
   margin-top: 1rem;
   margin-left: 1rem;
   font-family: var(--font-small-text);
