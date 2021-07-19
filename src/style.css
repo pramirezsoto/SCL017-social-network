@@ -1,6 +1,11 @@
 html {
     height: 100%;
 }
+
+main {
+  height: 400px;
+}
+
 @font-face {
   font-family: 'icomoon';
   src: url('fonts/icomoon.eot?gwknhc');
@@ -222,7 +227,7 @@ footer p {
   display: flex;
   align-items: center;
   text-align: center;
-  color: #000000;
+  color: 	#FFFFE0;
   padding: 30px;
 }
 
