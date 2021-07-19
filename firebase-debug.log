@@ -1,0 +1,58 @@
+[debug] [2021-07-18T17:32:33.577Z] ----------------------------------------------------------------------
+[debug] [2021-07-18T17:32:33.579Z] Command:       /usr/local/bin/node /Users/nicolequijada/.npm-global/bin/firebase init
+[debug] [2021-07-18T17:32:33.579Z] CLI Version:   9.16.0
+[debug] [2021-07-18T17:32:33.579Z] Platform:      darwin
+[debug] [2021-07-18T17:32:33.579Z] Node Version:  v14.17.3
+[debug] [2021-07-18T17:32:33.580Z] Time:          Sun Jul 18 2021 13:32:33 GMT-0400 (Chile Standard Time)
+[debug] [2021-07-18T17:32:33.580Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-18T17:32:33.585Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-18T17:32:33.585Z] > authorizing via signed-in user (quijadabnicolea@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/nicolequijada/Documents/GitHub/SCL017-social-network
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-07-18T17:35:07.637Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-07-18T17:35:08.714Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-07-18T17:35:08.714Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project mochileando-scl-017 (mochileando-scl-017) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2021-07-18T19:11:23.506Z] Error: write EIO
+    at afterWriteDispatched (internal/stream_base_commons.js:156:25)
+    at writeGeneric (internal/stream_base_commons.js:147:3)
+    at WriteStream.Socket._writeGeneric (net.js:787:11)
+    at WriteStream.Socket._write (net.js:799:8)
+    at writeOrBuffer (internal/streams/writable.js:358:12)
+    at WriteStream.Writable.write (internal/streams/writable.js:303:10)
+    at MuteStream.ondata (internal/streams/legacy.js:20:31)
+    at MuteStream.emit (events.js:375:28)
+    at MuteStream.emit (domain.js:470:12)
+    at MuteStream.write (/Users/nicolequijada/.npm-global/lib/node_modules/firebase-tools/node_modules/mute-stream/mute.js:121:8)
+    at Object.exports.clearLine (/Users/nicolequijada/.npm-global/lib/node_modules/firebase-tools/node_modules/inquirer/lib/utils/readline.js:50:13)
+    at ScreenManager.clean (/Users/nicolequijada/.npm-global/lib/node_modules/firebase-tools/node_modules/inquirer/lib/utils/screen-manager.js:100:10)
+    at ScreenManager.render (/Users/nicolequijada/.npm-global/lib/node_modules/firebase-tools/node_modules/inquirer/lib/utils/screen-manager.js:27:10)
+    at InputPrompt.render (/Users/nicolequijada/.npm-global/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/input.js:67:17)
+    at InputPrompt.onKeypress (/Users/nicolequijada/.npm-global/lib/node_modules/firebase-tools/node_modules/inquirer/lib/prompts/input.js:107:10)
+    at SafeSubscriber._next (/Users/nicolequijada/.npm-global/lib/node_modules/firebase-tools/node_modules/rxjs/internal/Observable.js:66:21)
+[error] 
+[error] Error: An unexpected error has occurred.
