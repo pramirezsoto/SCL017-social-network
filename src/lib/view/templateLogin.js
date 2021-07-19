@@ -11,13 +11,13 @@ export const login = () => {
   </p>
 </div>
 <div class="contenedor-derecho">
-  <p>Iniciar Sesion</p>
+  <p>Iniciar Sesión</p>
   <input type="email" id="email" placeholder="correo@example.com">
   <br />
-  <input type="password" id="password" placeholder="contraseña">
-  <button class="iniciarSesion" id="iniciar">iniciar sesion</button>
-  <h3>Si aun no tienes cuenta <br />registrate <a style=color:red href="#/register">aqui</a></h3>
-  <button class="iniciarConGoogle" id="iniciarConGoogle">iniciar sesion con google</button>
+   <input type="password"  id="password" placeholder="contraseña">
+    <button class="iniciarSesion" id="iniciar">iniciar sesión</button>
+    <h3>Si aun no tienes cuenta registrate <a class="aquí" style=color:red href="#/register">aquí</a></h3>
+    <button id="iniciarConGoogle"><img src="img/google.png" alt="logo google"><h5>iniciar sesión con google</h5></button>
 </div>
   `
 

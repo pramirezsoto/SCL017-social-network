@@ -17,7 +17,7 @@ const showTemplate = (hash) => {
     switch (hash) {
         //asignamos un caso distinto para cada template
         case '#/login':
-            containerRoot.style.height = '95vh'
+            containerRoot.style.height = '75vh'
             containerRoot.style.display = 'flex'
             containerRoot.style.justifyContent = 'space-around'
             containerRoot.innerHTML = login().innerHTML;
