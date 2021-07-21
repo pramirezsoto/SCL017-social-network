@@ -23,10 +23,10 @@ export const register = () => {
       <input type="password"  id="contraseña"  placeholder="Contraseña">
     </div> 
     <div>
-    <input type="button"  class="btn" value="Registrarse" href="#/posting">
-  </div>
-  <button class="iniciarConGoogle" id="iniciarConGoogle">iniciar sesion con google</button>
-
+    <button class="btn"  type="button" id="botonRegistrarse" onclick="window.location='#/posting'">Registrarse</button>
+  </div> 
+  <button id="iniciarConGoogle"><img src="img/google.png" alt="logo google"><h5>iniciar sesión con google</h5></button>
+  
     
 
 
@@ -34,15 +34,8 @@ export const register = () => {
 </form>
 
 
-    
-
-
-     
-
-    `;
-    
-
-
-   saludo.innerHTML = viewSaludo;
-    return saludo;
+ `;
+ 
+  saludo.innerHTML = viewSaludo;
+  return saludo;
 }
