@@ -9,23 +9,23 @@ export const register = () => {
   <div class="contenedor-derecho"> 
 
     <div class="input-container">
-      <i></i>
+      
       <input type="text" id="name"  placeholder="Nombre Completo">
     </div>
 
     <div class="input-container">
-      <i></i>
+      
       <input type="text"  id="gmail"  placeholder="correo@example.com">
     </div>
 
     <div class="input-container">
-      <i></i>
+
       <input type="password"  id="contraseña"  placeholder="Contraseña">
     </div> 
-    <div>
+    
     <input type="button"  class="btn" value="Registrarse" href="#/posting">
-  </div>
-  <button class="iniciarConGoogle" id="iniciarConGoogle">iniciar sesion con google</button>
+  
+  <button class="registerWithGoogle" id="registerWithGoogle"><img src="img/google.png" alt="logo google"><p>iniciar sesion con google</p></button>
 
     
 
