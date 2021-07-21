@@ -189,17 +189,17 @@ html {
   --font-small-text: 'Work Sans', sans-serif;
   --color-font-small-text: #000000;
   --background-color: #ffff;
-  --color-text-imputs: #A9A5A5;
+  --color-text-imputs: #dedede;
   --color-backgroud-imputs: rgba(196, 196, 196, 0.3);
   --color-background-banners: rgba(240, 238, 238, 0.9);
-  --color-title: #FCD536;
+  --color-title: rgba(205, 208, 60, 0.8);
   --button-hover: rgba(193, 153, 10, 0.95);
   --color-text-white: #ffff;
 }
 
 header {
   width: 100%;
-  height: 96px;
+  height: 6rem;
   left: 0px;
   top: 0px;
   background: var(--color-header-footer);
@@ -217,28 +217,21 @@ footer {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 96px;
-  left: 0px;
-  top: 487px;
+  height: 5rem;
+  margin-top: 2%;
+
   background: var(--color-header-footer);
   box-shadow: var(--color-header-footer);
 }
 
 footer p {
-  width: 569px;
-  height: 27px;
-  left: 37px;
-  top: 527px;
-  font-family: Prompt;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 27px;
+  font-family: var(--font-text-natural);
+  font-size: 1rem;
+  margin-left: 2%;
   display: flex;
   align-items: center;
   text-align: center;
   color: #FFFFE0;
-  padding: 30px;
 }
 
 .time-line {
@@ -312,106 +305,44 @@ footer p {
   color: var(--color-font-small-text);
 }
 
-#email {
-  width: 303px;
-  height: 33px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  font-family: Prompt;
-  font-style: italic;
-  font-size: 16px;
-}
 
-#password {
-  width: 303px;
-  height: 33px;
-  margin-top: 20px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  font-family: Prompt;
-  font-style: italic;
-  font-size: 16px;
-}
 
-#iniciar{
-  margin-top: 30px;
-  width: 220px;
-  height: 35px;
-  background: #FFFFFF;
-  border: 1px solid #FCD536;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-}
 
-#iniciarConGoogle{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0px;
-  width: 303px;
-  height: 33px;
-  background: #FFFFFF;
-  border: 1px solid #35A853;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  font-family: Prompt;
-  font-style: italic;
-  font-size: 16px;
 
-}
 
-#iniciarConGoogle img {
-  width: 22px;
-  height: 23px;
-  margin-right: 15px;
-  margin-block-start: 2px;
+
+
+
+
+
+
+#root .container-left {
   
 }
 
-
-#root .contenedor-izquierdo {
-  margin-top: 10px;
-  width: 404px;
-  height: 473px;
+#root .container-left img {
+  width: 50%;
+  margin-left: 15%;
+  margin-top: 5%;
 }
 
-#root .contenedor-izquierdo img {
-  width: 326px;
-  height: 196px;
-  margin-left: 20px;
-}
-
-#root .contenedor-izquierdo .texto-izquierdo {
-  width: 291px;
-  height: 207px;
-  font-family: Prompt;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 27px;
+#root .container-left .text-left {
+  width: 70%;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
   display: flex;
   text-align: center;
   color: #000000;
-  font-family: Ubuntu;
-  margin-top: 30px;
-  margin-left: 50px;
+  font-family: var(--font-title);
+  margin-left: 5%;  
 }
 
-#root .contenedor-derecho {
-  margin-top: 30px;
+#root .container-right {
+  margin-top: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 404px;
-  height: 473px;
+  width: 25%;
   background: #FFFFFF;
   border: 1px solid #000000;
   box-sizing: border-box;
@@ -420,39 +351,62 @@ footer p {
   border-radius: 15px;
 }
 
-#root .contenedor-derecho p  {
-  width: 182px;
-  height: 37px;
-  font-family: Ubuntu;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 26px;
-  line-height: 30px;
-  color: #000000;
-  mix-blend-mode: normal;
-  font-family: Prompt;
-  font-style: italic;
-  margin-top: 30px;
+#root .container-right p  {
+font-family: var(--font-title);
+color: var(--color-title);
+font-size: 1.5rem;
 }
 
-#root .contenedor-derecho .iniciarSesion {
-  width: 250px;
-  height: 35px;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 30px;
-  color: #000000;
-  mix-blend-mode: normal;
-  font-family: Prompt;
-  font-style: italic;
-  margin-top: 40px;
+#email {
+  width: 95%;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: var(--font-text-natural);
+  color: var(--color-text-imputs);
+  font-size: 1rem;
 }
 
-#root .contenedor-derecho h3 {
-  font-family: Work Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
+#password {
+  width: 95%;
+  margin-top: 2%;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: var(--font-text-natural);
+  color: var(--color-text-imputs);
+  font-size: 1rem;
+}
+
+.log-in{
+  margin-top: 8%;
+  width: 95%;
+  padding: 3%;
+  cursor: pointer;
+  background: var(--color-header-footer);
+  border: 1px solid black;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  color: var(--color-header-footer);
+  font-family: var(--font-title);
+  font-size: 1rem;
+
+
+}
+#iniciar:hover{
+  background-color: var(--color-title);
+  border: 1px solid black;
+  color: var(--color-text-white);
+}
+
+#root .container-right h3 {
+  font-family: var(--font-small-text);
+  font-size: 0.8rem;
   line-height: 15px;
   display: flex;
   align-items: center;
@@ -461,54 +415,200 @@ footer p {
   margin-top: 40px;
 }
 
-#root .contenedor-derecho h3 .aquí {
-  margin-left: 2px;
+#root .container-right h3 .aquí {
+  margin-left: 5px;
+  font-size: 1rem;
 }
-footer {
+
+#iniciarConGoogle img {
+  width: 22px;
+  margin-right: 15px;
+  
+}
+#iniciarConGoogle{
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  width: 95%;
+  height: 10%;
+  background: #FFFFFF;
+  border: 1px solid #35A853;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: var(--font-text-natural);
+  font-size: 0.9rem;
+
 }
 
-#root .contenedor-derecho h1  {
-  width: 182px;
-  height: 37px;
-  font-family: Ubuntu;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 26px;
-  line-height: 30px;
-  color: #000000;
-  mix-blend-mode: normal;
+/* pantalla de register */
+
+form{
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+form h1{
+  font-family: var(--font-title);
+  color: var(--color-title);
+  font-size:1.5rem;
+}
+
+#root .contenedor-derecho{
+  width: 95%;
+  margin-top: 2%;
+  background: #FFFFFF;
   text-align: center;
 
-} 
- 
-.btn {
-  margin-top: 30px;
-  width: 220px;
-  height: 35px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  color:rgba(205, 208, 60, 0.8)
-
-  
-} 
+}
 
 #name , #gmail , #contraseña{
-  margin-top: 30px;
-  width: 240px;
-  height: 20px;
+  width: 95%;
+  margin-top: 4%;
   background: #FFFFFF;
   border: 1px solid #000000;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  text-align: center;
+  font-family: var(--font-text-natural);
+  color: var(--color-text-imputs);
+  font-size: 1rem;
 }
 
 
+#root .contenedor-derecho .iniciarSesion {
+  margin-top: 8%;
+  width: 95%;
+  padding: 3%;
+  cursor: pointer;
+  background: var(--color-header-footer);
+  border: 1px solid black;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  color: var(--color-header-footer);
+  font-family: var(--font-title);
+  font-size: 1rem;
+}
+
+
+ 
+.btn {
+  margin-top: 10%;
+  width: 95%;
+  height: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  color: var(--color-title);
+  font-weight: bold;  
+} 
+.btn:hover{
+  background: var(--button-hover);
+  color: var(--color-text-white);
+}
+.registerWithGoogle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+  cursor: pointer;
+  height: 2rem;
+  width: 95%;
+  background: #FFFFFF;
+  border: 1px solid #35A853;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: var(--font-text-natural);
+  font-size: 0.9rem;
+
+}
+.registerWithGoogle img{
+  width: 22px;
+  margin-right: 15px;
+}
+
+.registerWithGoogle:hover{
+  background:#EAF4D9;
+}
+
+@media (max-width: 780px){
+  #root .container-right {
+    margin-right: 5%;
+    width: 40%;
+    padding-bottom: 5%;
+  }
+  #root .container-left .text-left{
+    font-size: 1rem;
+  }
+
+  form{
+    width: 35%;
+  }
+
+  form h1{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  #name , #gmail , #contraseña{
+    font-size: 0.9rem;
+  }
+
+
+}
+
+@media (max-width: 500px){
+
+  #root .container-left img{
+    display: none;
+  }
+
+  #root .container-left .text-left{
+    display: none;
+  }
+  #root .container-right{
+    width: 70%;
+    height: auto;
+  }
+  footer{
+    height: 5rem;
+    padding: 0;
+    font-size: 0.7rem;
+
+  }
+  form{
+    width: 50%;
+  }
+  form h1{
+    text-align: center;
+  }
+  #name , #gmail , #contraseña{
+    font-size: 0.8rem;
+    margin-top: 5%;
+  }
+  .btn{
+    font-size: 1rem;
+  }
+  .registerWithGoogle p{
+    font-size: 0.8rem;
+  }
+  
+
+}
 
 
 
