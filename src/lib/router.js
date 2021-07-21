@@ -3,19 +3,15 @@ import { register } from './view/templateRegister.js'
 import { timeLine } from './view/templateTimeLine.js'
 
 export const changeRoute = (hash) => {
-    if (hash === '#/login') {
-        return showTemplate(hash)
-    } else if (hash === '#/register') {
-        return showTemplate(hash)
-    } else {
-        return showTemplate(hash)
-    }
+    return showTemplate(hash);
+    
 }
 
 const showTemplate = (hash) => {
     const containerRoot = document.getElementById('root')
     switch (hash) {
         //asignamos un caso distinto para cada template
+        case "" : 
         case '#/login':
             containerRoot.style.height = '75vh'
             containerRoot.style.display = 'flex'
@@ -28,5 +24,6 @@ const showTemplate = (hash) => {
         case '#/posting':
             containerRoot.innerHTML = timeLine().innerHTML;
             break;
-    }
+        
+}
 }
