@@ -264,12 +264,12 @@ footer p {
   margin-left: 5%;  
 }
 
-#root .container-right {
-  margin-top: 3%;
+#root .container-right{
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
+  width: 40%;
   background: #FFFFFF;
   border: 1px solid #000000;
   box-sizing: border-box;
@@ -278,7 +278,11 @@ footer p {
   border-radius: 15px;
 }
 
-#root .container-right p  {
+#root .container-right #login-form{
+  width: 75%;
+}
+
+#root .container-right #login-form p  {
 font-family: var(--font-title);
 color: var(--color-title);
 font-size: 1.5rem;
@@ -331,7 +335,7 @@ font-size: 1.5rem;
   color: var(--color-text-white);
 }
 
-#root .container-right h3 {
+#root .container-right #login-form h3 {
   font-family: var(--font-small-text);
   font-size: 0.8rem;
   line-height: 15px;
@@ -342,9 +346,11 @@ font-size: 1.5rem;
   margin-top: 40px;
 }
 
-#root .container-right h3 .aquí {
+#root .container-right #login-form h3 .aquí {
   margin-left: 5px;
   font-size: 1rem;
+  cursor: pointer;
+  color: red;
 }
 
 #iniciarConGoogle img {
@@ -357,7 +363,7 @@ font-size: 1.5rem;
   justify-content: center;
   align-items: center;
   margin-top: 5%;
-  width: 95%;
+  width: 75%;
   height: 10%;
   background: #FFFFFF;
   border: 1px solid #35A853;
@@ -371,12 +377,12 @@ font-size: 1.5rem;
 
 /* segunda pantalla register */
 
-form{
+.form{
   margin-top: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
+  width: 100%;
   background: #FFFFFF;
   border: 1px solid #000000;
   box-sizing: border-box;
@@ -384,14 +390,14 @@ form{
   border-radius: 15px;
 }
 
-form h1{
+.form h1{
   font-family: var(--font-title);
   color: var(--color-title);
   font-size:1.5rem;
 }
 
 #root .contenedor-derecho{
-  width: 95%;
+  width: 404px;
   margin-top: 2%;
   background: #FFFFFF;
   text-align: center;
@@ -550,7 +556,7 @@ form h1{
 
 
 @media (max-width: 780px){
-  #root .container-right {
+  #root .container-right #login-form {
     margin-right: 5%;
     width: 40%;
     padding-bottom: 5%;
@@ -559,11 +565,11 @@ form h1{
     font-size: 1rem;
   }
 
-  form{
+  .form{
     width: 35%;
   }
 
-  form h1{
+  .form h1{
     font-size: 1.2rem;
     text-align: center;
   }
@@ -583,7 +589,7 @@ form h1{
   #root .container-left .text-left{
     display: none;
   }
-  #root .container-right{
+  #root .container-right #login-form{
     width: 70%;
     height: auto;
   }
@@ -593,10 +599,10 @@ form h1{
     font-size: 0.7rem;
 
   }
-  form{
+  .form{
     width: 50%;
   }
-  form h1{
+  .form h1{
     text-align: center;
   }
   #name , #gmail , #contraseña{
