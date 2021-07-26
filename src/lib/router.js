@@ -1,7 +1,7 @@
 import { login } from './view/templateLogin.js'
 import { register } from './view/templateRegister.js'
 import { timeLine } from './view/templateTimeLine.js'
-import { createUserWithPassword, signInWithPassword } from './auth/authetication.js';
+import { createUserWithPassword, signInWithPassword, signInWithGoogle } from './auth/authetication.js';
 
 export const changeRoute = (hash) => {
     return showTemplate(hash);
@@ -28,14 +28,24 @@ const showTemplate = (hash) => {
                 signInWithPassword(email, password);
             });
 
+            const loginWithGoogle = document.getElementById("iniciarConGoogle");
+            loginWithGoogle.addEventListener("click", (event) => {
+                signInWithGoogle();
+            });
+            
+
+
+            iniciarConGoogle
+
             break;
         case '#/register':
             containerRoot.innerHTML = register().innerHTML;
             const registerForm = document.getElementById("register-form");
             registerForm.addEventListener("submit", (event) => {
                 event.preventDefault()
-                //createUserWithPassword("quijadabnicolea@gmail.com", "123456", "nicole");
+               
 
+                
 
                 // asignamos a variables los datos del formulario
                 const name = registerForm['name'].value
@@ -44,6 +54,10 @@ const showTemplate = (hash) => {
                 createUserWithPassword(email, password, name);
 
             });
+            const registerWithGoogle = document.getElementById("registerWithGoogle");
+                registerWithGoogle.addEventListener("click", (event) => {
+                    signInWithGoogle();
+                });
 
             break;
         case '#/posting':

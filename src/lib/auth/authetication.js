@@ -28,6 +28,8 @@ export const createUserWithPassword = (email, password, names) => {
             alert(`la cuenta fue creada, verifica el correo que te hemos enviado`)
             console.log("usuario creado exitosamente");
             console.log(user);
+            //aqui redirecciono a pagina login
+            window.location = '#/login'
 
         })
         .catch((error) => {
@@ -58,4 +60,14 @@ export const signInWithPassword = (email, password) => {
             alert(`no se ha podido iniciar sesion error:${errorCode} ${errorMessage}`);
 
         })
+}
+
+export const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+    .then(result=>{
+        window.location = '#/posting'
+    }).catch(err=>{
+        console.log(err)
+    })
 }

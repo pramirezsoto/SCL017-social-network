@@ -17,9 +17,9 @@ export const login = () => {
   <br />
    <input type="password"  id="password" placeholder="contraseña">
     <button type="submit" class="log-in" id="iniciar">iniciar sesión</button>
-    <h3>Si aun no tienes cuenta registrate <a class="aquí" style=color:red onclick="window.location='#/register'">aquí</a></h3>
-    <button id="iniciarConGoogle"><img src="img/google.png" alt="logo google"><h5>iniciar sesión con google</h5></button>
+    <h3>Si aun no tienes cuenta registrate <a class="aquí" onclick="window.location='#/register'">aquí</a></h3>
     </form>
+    <button id="iniciarConGoogle"><img src="img/google.png" alt="logo google"><h5>iniciar sesión con google</h5></button>
 </div>
   `
 

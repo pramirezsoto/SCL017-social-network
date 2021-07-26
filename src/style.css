@@ -422,6 +422,8 @@ font-size: 1.5rem;
 #root .container-right #login-form h3 .aquí {
   margin-left: 5px;
   font-size: 1rem;
+  cursor: pointer;
+  color: red;
 }
 
 #iniciarConGoogle img {
@@ -434,7 +436,7 @@ font-size: 1.5rem;
   justify-content: center;
   align-items: center;
   margin-top: 5%;
-  width: 95%;
+  width: 75%;
   height: 10%;
   background: #FFFFFF;
   border: 1px solid #35A853;
