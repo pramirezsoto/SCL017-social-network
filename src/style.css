@@ -21,12 +21,12 @@ html {
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  line-height: 2;
+  letter-spacing: 1px;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
@@ -197,9 +197,11 @@ html {
   --color-text-white: #ffff;
 }
 
+/* Principal de todas las pantallas */
+
 header {
   width: 100%;
-  height: 6rem;
+  height: 5rem;
   left: 0px;
   top: 0px;
   background: var(--color-header-footer);
@@ -207,17 +209,16 @@ header {
 }
 
 header img {
-  width: 159px;
-  height: 136px;
+  width: 100px;
   left: 0px;
   top: 0px;
 }
 
-footer {
+.footer {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 5rem;
+  height: 3rem;
   margin-top: 2%;
 
   background: var(--color-header-footer);
@@ -234,90 +235,16 @@ footer p {
   color: #FFFFE0;
 }
 
-.time-line {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.hide{
+  display: none;
 }
 
-.banner-left {
-  position: absolute;
-  width: 15%;
-  height: 100%;
-  font-family: var(--font-text-natural);
-  background: var(--color-background-banners);
-  border: 1px solid #000000;
-  box-sizing: border-box;
+/* primera pantalla login */
+
+.login{
+  height: 75vh;
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  grid-column-start: 1;
-}
-
-.banner-right {
-  position: relative;
-  width: 65%;
-  height: 100%;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #000000;
-  font-family: var(--font-text-natural);
-  background: var(--color-background-banners);
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  margin-left: auto;
-  grid-column-start: 4;
-}
-
-.icon-users {
-  margin-top: 1rem;
-  margin-left: 1rem;
-  font-family: var(--font-small-text);
-  color: var(--color-font-small-text);
-}
-
-.icon-mobile {
-  margin-top: 1rem;
-  margin-left: 1rem;
-  font-family: var(--font-small-text);
-  color: var(--color-font-small-text);
-}
-
-.icon-lock {
-  margin-top: 1rem;
-  margin-left: 1rem;
-  font-family: var(--font-small-text);
-  color: var(--color-font-small-text);
-}
-
-.icon-pencil {
-  margin-top: 1rem;
-  margin-left: 1rem;
-  font-family: var(--font-small-text);
-  color: var(--color-font-small-text);
-}
-.icon-home{
-  margin-top: 1rem;
-  margin-left: 1rem;
-  font-family: var(--font-small-text);
-  color: var(--color-font-small-text);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-#root .container-left {
-  
+  justify-content: space-around;
 }
 
 #root .container-left img {
@@ -448,7 +375,7 @@ font-size: 1.5rem;
 
 }
 
-/* pantalla de register */
+/* segunda pantalla register */
 
 .form{
   margin-top: 3%;
@@ -551,6 +478,82 @@ font-size: 1.5rem;
 .registerWithGoogle:hover{
   background:#EAF4D9;
 }
+
+/* pantalla 3 time line */
+
+.posting{
+  height: 100vh;
+}
+
+.time-line{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+}
+.banner-left{
+  position: absolute;
+  width: 15%;
+  height: 100%;
+  font-family: var(--font-text-natural);
+  background: var(--color-background-banners);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  grid-column-start: 1;
+ 
+}
+
+.icon-home{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+}
+.icon-user {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+}
+
+.icon-newspaper{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+  
+}
+.icon-exit{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+}
+
+
+.banner-right{
+  position: relative;
+  width: 65%;
+  height: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #000000;
+  font-family: var(--font-text-natural);
+  background: var(--color-background-banners);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-left: auto;
+  grid-column-start: 4;
+}
+
+
+
+
 
 @media (max-width: 780px){
   #root .container-right #login-form {
