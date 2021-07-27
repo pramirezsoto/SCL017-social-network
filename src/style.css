@@ -532,6 +532,13 @@ font-size: 1.5rem;
   color: var(--color-font-small-text);
 }
 
+.shared-today{
+  grid-column-start: 2;
+  grid-column-end: 4;
+  text-align: center;
+  margin-top: 5%;
+}
+
 
 .banner-right{
   position: relative;
