@@ -11,32 +11,12 @@ export const timeLine = () => {
   
   </div>
     <div class="shared-today">
-      <input type="text" placeholder="Que te gustaria compartir hoy?">
-      <div class="name-user">Nicole Quijada ha compartido</div>
-      <div class="text-post">Hola, que recomendaciones me darian para ir a hacer trekking en el cerro manquehuito</div>
+      <input id="post" type="text" placeholder="Que te gustaria compartir hoy?">
+      <div class="name-user"></div>
+      <div class="text-post"></div>
       <i></i>
       <a class="icon-heart" href="">Like</a> <a class="icon-bubbles2" href="">Comentarios</a>
-      <button id="shared" class="shared">Publicar</button>
-    
-    </div>
-
-    <div class="shared-today">
-      <input type="text" placeholder="Que te gustaria compartir hoy?">
-      <div class="name-user">Nicole Quijada ha compartido</div>
-      <div class="text-post">Hola, que recomendaciones me darian para ir a hacer trekking en el cerro manquehuito</div>
-      <i></i>
-      <a class="icon-heart" href="">Like</a> <a class="icon-bubbles2" href="">Comentarios</a>
-      <button id="shared" class="shared">Publicar</button>
-    
-    </div>
-
-    <div class="shared-today">
-      <input type="text" placeholder="Que te gustaria compartir hoy?">
-      <div class="name-user">Nicole Quijada ha compartido</div>
-      <div class="text-post">Hola, que recomendaciones me darian para ir a hacer trekking en el cerro manquehuito</div>
-      <i></i>
-      <a class="icon-heart" href="">Like</a> <a class="icon-bubbles2" href="">Comentarios</a>
-      <button id="shared" class="shared">Publicar</button>
+      <button id="shared" class="shared" onclick="window.location='#/savePost'">Publicar</button>
     
     </div>
     

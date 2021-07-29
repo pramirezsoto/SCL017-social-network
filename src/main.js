@@ -12,11 +12,6 @@ const init = () => {
 import { myFunction } from './lib/index.js';
 import { firebaseConfig } from './lib/config/configFirebase.js';
 
-
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-
-// signInWithPassword("quijadabnicolea@gmail.com", "123456");
-
-
 init();
