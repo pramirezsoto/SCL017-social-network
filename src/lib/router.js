@@ -63,7 +63,6 @@ const showTemplate = (hash) => {
             const shared = {content: document.getElementById('shared')};
             shared.addEventListener("submit" , (event) =>{
                 event.preventDefault()
-
                 const email = registerForm['email'].value
             firestoreSave("posts",email, postData);    
 
