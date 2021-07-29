@@ -8,11 +8,8 @@ html {
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?vtzdfx');
-  src:  url('fonts/icomoon.eot?vtzdfx#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?vtzdfx') format('truetype'),
-    url('fonts/icomoon.woff?vtzdfx') format('woff'),
-    url('fonts/icomoon.svg?vtzdfx#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?vtzdfx');
+  src: url('fonts/icomoon.eot?vtzdfx#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?vtzdfx') format('truetype'), url('fonts/icomoon.woff?vtzdfx') format('woff'), url('fonts/icomoon.svg?vtzdfx#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,7 +24,6 @@ html {
   text-transform: none;
   line-height: 2;
   letter-spacing: 1px;
-
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,139 +32,182 @@ html {
 .icon-home:before {
   content: "\e900";
 }
+
 .icon-newspaper:before {
   content: "\e904";
 }
+
 .icon-pencil:before {
   content: "\e905";
 }
+
 .icon-image:before {
   content: "\e90d";
 }
+
 .icon-camera:before {
   content: "\e90f";
 }
+
 .icon-envelop:before {
   content: "\e945";
 }
+
 .icon-mobile:before {
   content: "\e958";
 }
+
 .icon-undo2:before {
   content: "\e967";
 }
+
 .icon-redo2:before {
   content: "\e968";
 }
+
 .icon-bubble:before {
   content: "\e96b";
 }
+
 .icon-bubbles:before {
   content: "\e96c";
 }
+
 .icon-bubbles2:before {
   content: "\e96d";
 }
+
 .icon-bubble2:before {
   content: "\e96e";
 }
+
 .icon-bubbles3:before {
   content: "\e96f";
 }
+
 .icon-user:before {
   content: "\e971";
 }
+
 .icon-users:before {
   content: "\e972";
 }
+
 .icon-user-plus:before {
   content: "\e973";
 }
+
 .icon-user-check:before {
   content: "\e975";
 }
+
 .icon-user-tie:before {
   content: "\e976";
 }
+
 .icon-spinner11:before {
   content: "\e984";
 }
+
 .icon-key:before {
   content: "\e98d";
 }
+
 .icon-lock:before {
   content: "\e98f";
 }
+
 .icon-unlocked:before {
   content: "\e990";
 }
+
 .icon-cog:before {
   content: "\e994";
 }
+
 .icon-cogs:before {
   content: "\e995";
 }
+
 .icon-bin:before {
   content: "\e9ac";
 }
+
 .icon-bin2:before {
   content: "\e9ad";
 }
+
 .icon-switch:before {
   content: "\e9b6";
 }
+
 .icon-list:before {
   content: "\e9ba";
 }
+
 .icon-menu3:before {
   content: "\e9bf";
 }
+
 .icon-sphere:before {
   content: "\e9c9";
 }
+
 .icon-brightness-contrast:before {
   content: "\e9d6";
 }
+
 .icon-star-full:before {
   content: "\e9d9";
 }
+
 .icon-heart:before {
   content: "\e9da";
 }
+
 .icon-warning:before {
   content: "\ea07";
 }
+
 .icon-enter:before {
   content: "\ea13";
 }
+
 .icon-exit:before {
   content: "\ea14";
 }
+
 .icon-loop2:before {
   content: "\ea2e";
 }
+
 .icon-circle-down:before {
   content: "\ea43";
 }
+
 .icon-share:before {
   content: "\ea7d";
 }
+
 .icon-mail4:before {
   content: "\ea86";
 }
+
 .icon-google-plus:before {
   content: "\ea8b";
 }
+
 .icon-flickr:before {
   content: "\eaa3";
 }
+
 .icon-flickr2:before {
   content: "\eaa4";
 }
+
 .icon-github:before {
   content: "\eab0";
 }
-
 
 /* Las lineas que estan comentadas, es para que vean un ejemplo de como 
   podemos utilizar los iconos */
@@ -220,7 +259,6 @@ header img {
   width: 100%;
   height: 3rem;
   margin-top: 2%;
-
   background: var(--color-header-footer);
   box-shadow: var(--color-header-footer);
 }
@@ -235,13 +273,13 @@ footer p {
   color: #FFFFE0;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
 /* primera pantalla login */
 
-.login{
+.login {
   height: 75vh;
   display: flex;
   justify-content: space-around;
@@ -261,10 +299,10 @@ footer p {
   text-align: center;
   color: #000000;
   font-family: var(--font-title);
-  margin-left: 5%;  
+  margin-left: 5%;
 }
 
-#root .container-right{
+#root .container-right {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
@@ -278,14 +316,14 @@ footer p {
   border-radius: 15px;
 }
 
-#root .container-right #login-form{
+#root .container-right #login-form {
   width: 75%;
 }
 
-#root .container-right #login-form p  {
-font-family: var(--font-title);
-color: var(--color-title);
-font-size: 1.5rem;
+#root .container-right #login-form p {
+  font-family: var(--font-title);
+  color: var(--color-title);
+  font-size: 1.5rem;
 }
 
 #email {
@@ -313,7 +351,7 @@ font-size: 1.5rem;
   font-size: 1rem;
 }
 
-.log-in{
+.log-in {
   margin-top: 8%;
   width: 95%;
   padding: 3%;
@@ -326,10 +364,9 @@ font-size: 1.5rem;
   color: var(--color-header-footer);
   font-family: var(--font-title);
   font-size: 1rem;
-
-
 }
-#iniciar:hover{
+
+#iniciar:hover {
   background-color: var(--color-title);
   border: 1px solid black;
   color: var(--color-text-white);
@@ -356,9 +393,9 @@ font-size: 1.5rem;
 #iniciarConGoogle img {
   width: 22px;
   margin-right: 15px;
-  
 }
-#iniciarConGoogle{
+
+#iniciarConGoogle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -372,12 +409,11 @@ font-size: 1.5rem;
   border-radius: 20px;
   font-family: var(--font-text-natural);
   font-size: 0.9rem;
-
 }
 
 /* segunda pantalla register */
 
-.form{
+.form {
   margin-top: 3%;
   display: flex;
   flex-direction: column;
@@ -390,21 +426,20 @@ font-size: 1.5rem;
   border-radius: 15px;
 }
 
-.form h1{
+.form h1 {
   font-family: var(--font-title);
   color: var(--color-title);
-  font-size:1.5rem;
+  font-size: 1.5rem;
 }
 
-#root .contenedor-derecho{
+#root .contenedor-derecho {
   width: 404px;
   margin-top: 2%;
   background: #FFFFFF;
   text-align: center;
-
 }
 
-#name , #gmail , #contraseña{
+#name, #gmail, #contraseña {
   width: 95%;
   margin-top: 4%;
   background: #FFFFFF;
@@ -416,7 +451,6 @@ font-size: 1.5rem;
   color: var(--color-text-imputs);
   font-size: 1rem;
 }
-
 
 #root .contenedor-derecho .iniciarSesion {
   margin-top: 8%;
@@ -433,8 +467,6 @@ font-size: 1.5rem;
   font-size: 1rem;
 }
 
-
- 
 .btn {
   margin-top: 10%;
   width: 95%;
@@ -447,13 +479,15 @@ font-size: 1.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   color: var(--color-title);
-  font-weight: bold;  
-} 
-.btn:hover{
+  font-weight: bold;
+}
+
+.btn:hover {
   background: var(--button-hover);
   color: var(--color-text-white);
 }
-.registerWithGoogle{
+
+.registerWithGoogle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -468,29 +502,30 @@ font-size: 1.5rem;
   border-radius: 20px;
   font-family: var(--font-text-natural);
   font-size: 0.9rem;
-
 }
-.registerWithGoogle img{
+
+.registerWithGoogle img {
   width: 22px;
   margin-right: 15px;
 }
 
-.registerWithGoogle:hover{
-  background:#EAF4D9;
+.registerWithGoogle:hover {
+  background: #EAF4D9;
 }
 
 /* pantalla 3 time line */
 
-.posting{
+.posting {
   height: 100vh;
 }
 
-.time-line{
+.time-line {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: 100%;
 }
-.banner-left{
+
+.banner-left {
   position: absolute;
   width: 15%;
   height: 100%;
@@ -502,15 +537,15 @@ font-size: 1.5rem;
   flex-direction: column;
   flex-wrap: nowrap;
   grid-column-start: 1;
- 
 }
 
-.icon-home{
+.icon-home {
   margin-top: 1rem;
   margin-left: 1rem;
   font-family: var(--font-small-text);
   color: var(--color-font-small-text);
 }
+
 .icon-user {
   margin-top: 1rem;
   margin-left: 1rem;
@@ -518,29 +553,49 @@ font-size: 1.5rem;
   color: var(--color-font-small-text);
 }
 
-.icon-newspaper{
-  margin-top: 1rem;
-  margin-left: 1rem;
-  font-family: var(--font-small-text);
-  color: var(--color-font-small-text);
-  
-}
-.icon-exit{
+.icon-newspaper {
   margin-top: 1rem;
   margin-left: 1rem;
   font-family: var(--font-small-text);
   color: var(--color-font-small-text);
 }
 
-.shared-today{
+.icon-exit {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+}
+
+.shared-today {
   grid-column-start: 2;
   grid-column-end: 4;
   text-align: center;
   margin-top: 5%;
 }
 
+#container-posts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+  width: 400px;
+  height: 100%;
+  border: 1px solid black;
+}
 
-.banner-right{
+#container-posts .onePost {
+  margin: 50px;
+  width: 250px;
+  background-color: rgba(237, 191, 101, 0.7);
+  border: 5px dashed blue;
+}
+
+#container-posts .onePost p {
+  text-align: center;
+}
+
+.banner-right {
   position: relative;
   width: 65%;
   height: 100%;
@@ -558,74 +613,57 @@ font-size: 1.5rem;
   grid-column-start: 4;
 }
 
-
-
-
-
-@media (max-width: 780px){
+@media (max-width: 780px) {
   #root .container-right #login-form {
     margin-right: 5%;
     width: 40%;
     padding-bottom: 5%;
   }
-  #root .container-left .text-left{
+  #root .container-left .text-left {
     font-size: 1rem;
   }
-
-  .form{
+  .form {
     width: 35%;
   }
-
-  .form h1{
+  .form h1 {
     font-size: 1.2rem;
     text-align: center;
   }
-  #name , #gmail , #contraseña{
+  #name, #gmail, #contraseña {
     font-size: 0.9rem;
   }
-
-
 }
 
-@media (max-width: 500px){
-
-  #root .container-left img{
+@media (max-width: 500px) {
+  #root .container-left img {
     display: none;
   }
-
-  #root .container-left .text-left{
+  #root .container-left .text-left {
     display: none;
   }
-  #root .container-right #login-form{
+  #root .container-right #login-form {
     width: 70%;
     height: auto;
   }
-  footer{
+  footer {
     height: 5rem;
     padding: 0;
     font-size: 0.7rem;
-
   }
-  .form{
+  .form {
     width: 50%;
   }
-  .form h1{
+  .form h1 {
     text-align: center;
   }
-  #name , #gmail , #contraseña{
+  #name, #gmail, #contraseña {
     font-size: 0.8rem;
     margin-top: 5%;
   }
-  .btn{
+  .btn {
     font-size: 1rem;
   }
-  .registerWithGoogle p{
+  .registerWithGoogle p {
     font-size: 0.8rem;
   }
-  
-
 }
-
-
-
-
