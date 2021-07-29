@@ -59,7 +59,16 @@ const showTemplate = (hash) => {
             containerRoot.innerHTML = timeLine().innerHTML;
             break;
         case '#/savePost':
-            const postData = { content: document.getElementById('post').value, email: 'paularamirezsot@gmail.com' };
-            firestoreSave("posts", postData);
+            const postData = { content: document.getElementById('post').value};
+            const shared = {content: document.getElementById('shared')};
+            shared.addEventListener("submit" , (event) =>{
+                event.preventDefault()
+
+                const email = registerForm['email'].value
+            firestoreSave("posts",email, postData);    
+
+            });
+
+            
     }
 }
