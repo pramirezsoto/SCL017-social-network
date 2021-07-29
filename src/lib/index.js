@@ -7,7 +7,6 @@ export const myFunction = () => {
   document.getElementById('root').appendChild(login());
   document.getElementById('root').appendChild(register());
   document.getElementById('root').appendChild(timeLine());
-
 };
 
 

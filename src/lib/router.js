@@ -1,11 +1,11 @@
 import { login } from './view/templateLogin.js'
 import { register } from './view/templateRegister.js'
 import { timeLine } from './view/templateTimeLine.js'
+import { firestoreSave } from './database/firestore.js'
 import { createUserWithPassword, signInWithPassword, signInWithGoogle } from './auth/authetication.js';
 
 export const changeRoute = (hash) => {
     return showTemplate(hash);
-
 }
 
 const showTemplate = (hash) => {
@@ -32,21 +32,13 @@ const showTemplate = (hash) => {
                 signInWithGoogle();
             });
             
-
-
-            iniciarConGoogle
-
-            break;
+        break;
         case '#/register':
             
             containerRoot.innerHTML = register().innerHTML;
             const registerForm = document.getElementById("register-form");
             registerForm.addEventListener("submit", (event) => {
                 event.preventDefault()
-               
-
-                
-
                 // asignamos a variables los datos del formulario
                 const name = registerForm['name'].value
                 const email = registerForm['email'].value
@@ -66,6 +58,8 @@ const showTemplate = (hash) => {
             containerRoot.classList.add('posting');
             containerRoot.innerHTML = timeLine().innerHTML;
             break;
-
+        case '#/savePost':
+            const postData = { content: document.getElementById('post').value, email: 'paularamirezsot@gmail.com' };
+            firestoreSave("posts", postData);
     }
 }
