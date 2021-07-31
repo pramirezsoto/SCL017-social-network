@@ -26,17 +26,26 @@ const showTemplate = (hash) => {
                 // asignamos a variables los datos del formulario
                 const email = loginForm['email'].value
                 const password = loginForm['password'].value
-                signInWithPassword(email, password);
+
+
+                //aca validaremos los campos de enbtrada
+                if (email.length == 0) {
+                    alert("Por favor ingrese su email")
+                } else if ((password.length == 0)) {
+                    alert("Por favor ingrese su contraseña")
+                } else {
+                    signInWithPassword(email, password);
+                }
             });
 
             const loginWithGoogle = document.getElementById("iniciarConGoogle");
             loginWithGoogle.addEventListener("click", (event) => {
                 signInWithGoogle();
             });
-            
-        break;
+
+            break;
         case '#/register':
-            
+
             containerRoot.innerHTML = register().innerHTML;
             const registerForm = document.getElementById("register-form");
             registerForm.addEventListener("submit", (event) => {
@@ -45,32 +54,34 @@ const showTemplate = (hash) => {
                 const name = registerForm['name'].value
                 const email = registerForm['email'].value
                 const password = registerForm['password'].value
+
                 createUserWithPassword(email, password, name);
             });
             const registerWithGoogle = document.getElementById("registerWithGoogle");
-                registerWithGoogle.addEventListener("click", (event) => {
-                    signInWithGoogle();
-                });
-                case '#/posting':
-                    containerRoot.classList.remove('login');
-                    footer.classList.add('hide');
-                    containerRoot.classList.add('posting');
-                    containerRoot.innerHTML = timeLine().innerHTML;
-        
-                    firestoreRead();
-        
-                    break;
-                case '#/savePost':
-                    const userActive = currentUser();
-                    const postData = { 
-                        content: document.getElementById('post').value, 
-                        email: userActive.email,
-                        uid : userActive.uid,
-                        timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
-                
-                    };
-                    firestoreSave("posts", postData);
-        
-                    firestoreRead();
-            }
-        }
+            registerWithGoogle.addEventListener("click", (event) => {
+                signInWithGoogle();
+            });
+            break;
+        case '#/posting':
+            containerRoot.classList.remove('login');
+            footer.classList.add('hide');
+            containerRoot.classList.add('posting');
+            containerRoot.innerHTML = timeLine().innerHTML;
+
+            firestoreRead();
+
+            break;
+        case '#/savePost':
+            const userActive = currentUser();
+            const postData = {
+                content: document.getElementById('post').value,
+                email: userActive.email,
+                uid: userActive.uid,
+                timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
+
+            };
+            firestoreSave("posts", postData);
+
+            firestoreRead();
+    }
+}
