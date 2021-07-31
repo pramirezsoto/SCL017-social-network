@@ -24,17 +24,26 @@ const showTemplate = (hash) => {
                 // asignamos a variables los datos del formulario
                 const email = loginForm['email'].value
                 const password = loginForm['password'].value
-                signInWithPassword(email, password);
+
+
+                //aca validaremos los campos de enbtrada
+                if (email.length == 0) {
+                    alert("Por favor ingrese su email")
+                } else if((password.length == 0)) {
+                    alert("Por favor ingrese su contraseña")
+                }else{
+                    signInWithPassword(email, password);
+                }
             });
 
             const loginWithGoogle = document.getElementById("iniciarConGoogle");
             loginWithGoogle.addEventListener("click", (event) => {
                 signInWithGoogle();
             });
-            
-        break;
+
+            break;
         case '#/register':
-            
+
             containerRoot.innerHTML = register().innerHTML;
             const registerForm = document.getElementById("register-form");
             registerForm.addEventListener("submit", (event) => {
@@ -47,9 +56,9 @@ const showTemplate = (hash) => {
 
             });
             const registerWithGoogle = document.getElementById("registerWithGoogle");
-                registerWithGoogle.addEventListener("click", (event) => {
-                    signInWithGoogle();
-                });
+            registerWithGoogle.addEventListener("click", (event) => {
+                signInWithGoogle();
+            });
 
             break;
         case '#/posting':
@@ -59,15 +68,15 @@ const showTemplate = (hash) => {
             containerRoot.innerHTML = timeLine().innerHTML;
             break;
         case '#/savePost':
-            const postData = { content: document.getElementById('post').value};
-            const shared = {content: document.getElementById('shared')};
-            shared.addEventListener("submit" , (event) =>{
+            const postData = { content: document.getElementById('post').value };
+            const shared = { content: document.getElementById('shared') };
+            shared.addEventListener("submit", (event) => {
                 event.preventDefault()
                 const email = registerForm['email'].value
-            firestoreSave("posts",email, postData);    
+                firestoreSave("posts", email, postData);
 
             });
 
-            
+
     }
 }
