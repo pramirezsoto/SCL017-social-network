@@ -1,8 +1,10 @@
 import { login } from './view/templateLogin.js'
 import { register } from './view/templateRegister.js'
 import { timeLine } from './view/templateTimeLine.js'
-import { firestoreSave } from './database/firestore.js'
-import { createUserWithPassword, signInWithPassword, signInWithGoogle } from './auth/authetication.js';
+import { firestoreRead, firestoreSave } from './database/firestore.js'
+import { createUserWithPassword, signInWithPassword, signInWithGoogle, currentUser } from './auth/authetication.js';
+
+
 
 export const changeRoute = (hash) => {
     return showTemplate(hash);
@@ -53,30 +55,31 @@ const showTemplate = (hash) => {
                 const email = registerForm['email'].value
                 const password = registerForm['password'].value
                 createUserWithPassword(email, password, name);
-
             });
             const registerWithGoogle = document.getElementById("registerWithGoogle");
-            registerWithGoogle.addEventListener("click", (event) => {
-                signInWithGoogle();
-            });
-
-            break;
-        case '#/posting':
-            containerRoot.classList.remove('login');
-            footer.classList.add('hide');
-            containerRoot.classList.add('posting');
-            containerRoot.innerHTML = timeLine().innerHTML;
-            break;
-        case '#/savePost':
-            const postData = { content: document.getElementById('post').value };
-            const shared = { content: document.getElementById('shared') };
-            shared.addEventListener("submit", (event) => {
-                event.preventDefault()
-                const email = registerForm['email'].value
-                firestoreSave("posts", email, postData);
-
-            });
-
-
-    }
-}
+                registerWithGoogle.addEventListener("click", (event) => {
+                    signInWithGoogle();
+                });
+                case '#/posting':
+                    containerRoot.classList.remove('login');
+                    footer.classList.add('hide');
+                    containerRoot.classList.add('posting');
+                    containerRoot.innerHTML = timeLine().innerHTML;
+        
+                    firestoreRead();
+        
+                    break;
+                case '#/savePost':
+                    const userActive = currentUser();
+                    const postData = { 
+                        content: document.getElementById('post').value, 
+                        email: userActive.email,
+                        uid : userActive.uid,
+                        timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
+                
+                    };
+                    firestoreSave("posts", postData);
+        
+                    firestoreRead();
+            }
+        }

@@ -1,14 +1,8 @@
-body{
-  margin: auto 0;
-  padding: 0;
-}
+
 html {
   height: 100%;
 }
 
-/* main {
-  height: 400px;
-} */
 
 @font-face {
   font-family: 'icomoon';
@@ -251,6 +245,26 @@ footer p {
   justify-content: space-around;
 }
 
+.banner-right{
+
+  position: relative;
+  width: 65%;
+  height: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #000000;
+  font-family: var(--font-text-natural);
+  background: var(--color-background-banners);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-left: auto;
+  grid-column-start: 4;
+}
+
+
 #root .container-left img {
   width: 50%;
   margin-left: 15%;
@@ -488,14 +502,44 @@ font-size: 1.5rem;
 
 /* pantalla 3 time line */
 
+.post{
+ padding-top: 35px; 
+}
+
+.post-head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.date{
+  display: flex;
+  flex-direction: column;
+}
+
+.icons{
+  display: flex;
+  justify-content: space-between;
+}
+
 .posting{
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .time-line{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: 100%;
+}
+
+
+.img-profile{
+  text-align: left;
+}
+
+.img-profile img{
+  width: 100px;
+
+  
 }
 .banner-left{
   position: absolute;
@@ -517,6 +561,9 @@ font-size: 1.5rem;
   margin-left: 1rem;
   font-family: var(--font-small-text);
   color: var(--color-font-small-text);
+}
+.posting {
+  /* height: 100vh; */
 }
 .icon-user {
   margin-top: 1rem;
@@ -557,27 +604,17 @@ font-size: 1.5rem;
 
 
 
-.banner-right{
 
-  position: relative;
-  width: 65%;
-  height: 100%;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #000000;
-  font-family: var(--font-text-natural);
-  background: var(--color-background-banners);
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  margin-left: auto;
-  grid-column-start: 4;
+#container-posts .onePost {
+  margin: 50px;
+  width: 250px;
+  background-color: rgba(237, 191, 101, 0.7);
+  border: 5px dashed blue;
 }
 
-
-
+#container-posts .onePost p {
+  text-align: center;
+}
 
 
 @media (max-width: 780px){
