@@ -4,7 +4,22 @@ import { timeLine } from './view/templateTimeLine.js'
 import { firestoreRead, firestoreSave } from './database/firestore.js'
 import { createUserWithPassword, signInWithPassword, signInWithGoogle } from './auth/authetication.js';
 
+const containerRoot = document.getElementById('root');
+//Mostrar html correcto al recargar la pagina
+if(window.location.pathname === '/register'){
+    containerRoot.innerHTML = register().innerHTML;
+}
+else if(window.location.pathname === '/posting'){
+    containerRoot.innerHTML = timeLine().innerHTML;
+}
+//cambiar la url para que no se vea el gatito
 export const changeRoute = (hash) => {
+    if(hash === '#/register'){
+        window.history.replaceState({}, 'register' , '/register');
+    }
+    else if(hash === '#/posting'){
+        window.history.replaceState({} , 'posting' , '/posting');
+    }
     return showTemplate(hash);
 }
 
@@ -64,4 +79,14 @@ const showTemplate = (hash) => {
 
             firestoreRead();
     }
+}
+window.onpopstate = () => {
+    if(window.location.pathname === '/register'){
+        containerRoot.innerHTML = register().innerHTML;
+    }
+    else if(window.location.pathname === '/posting'){
+        containerRoot.innerHTML = timeLine().innerHTML;
+    }
+       
+
 }

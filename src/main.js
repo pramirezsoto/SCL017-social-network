@@ -3,7 +3,12 @@
 import { changeRoute } from './lib/router.js';
 
 const init = () => {
-    window.onload = changeRoute('#/login');
+    window.onload = () => {
+        if (window.location.pathname === '/') {
+            changeRoute('#/login');
+        }
+    }
+    
     window.addEventListener('hashchange', () => {
         console.log(window.location.hash);
         changeRoute(window.location.hash);
