@@ -1,3 +1,5 @@
+import { urlSite } from '../config/globalSettings.js';
+
 export const createUserWithPassword = (email, password, names) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
@@ -6,7 +8,7 @@ export const createUserWithPassword = (email, password, names) => {
             displayName: names
         })
         let actionCodeSettings = {
-            url: 'http://localhost:5000/'
+            url: urlSite
         }
         
         user.sendEmailVerification(actionCodeSettings)
@@ -76,3 +78,5 @@ export const currentUser = () => {
     const user = firebase.auth().currentUser;
     return user 
 }
+
+
