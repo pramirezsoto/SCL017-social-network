@@ -25,7 +25,7 @@ export const register = () => {
     
     <button class="btn"  type="submit" id="botonRegistrarse" >Registrarse</button>
   
-  <button class="registerWithGoogle" id="registerWithGoogle"><img src="img/google.png" alt="logo google"><p>iniciar sesion con google</p></button>
+  <button class="registerWithGoogle" id="registerWithGoogle"><img src="img/google.png" alt="logo google"><p>Registrarse con Google</p></button>
 </div>
 </form>`;
  
