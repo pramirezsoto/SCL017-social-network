@@ -1,22 +1,22 @@
 // Este es el punto de entrada de tu aplicacion
-
-import { changeRoute } from './lib/router.js';
+import { changeRoute, showTemplate } from './lib/router.js';
+import { firebaseConfig } from './lib/config/configFirebase.js';
 
 const init = () => {
     window.onload = () => {
-        if (window.location.pathname === '/') {
-            changeRoute('#/login');
-        }
+        showTemplate(window.location.pathname);
+    }
+
+    window.onpopstate = () => {
+        showTemplate(window.location.pathname);
     }
     
     window.addEventListener('hashchange', () => {
-        console.log(window.location.hash);
         changeRoute(window.location.hash);
     });
-};
-import { myFunction } from './lib/index.js';
-import { firebaseConfig } from './lib/config/configFirebase.js';
 
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+};
+
 init();

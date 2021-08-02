@@ -1,35 +1,34 @@
 import { login } from './view/templateLogin.js'
 import { register } from './view/templateRegister.js'
 import { timeLine } from './view/templateTimeLine.js'
+import { footer } from './view/templateFooter.js'
 import { firestoreRead, firestoreSave } from './database/firestore.js'
-import { createUserWithPassword, signInWithPassword, signInWithGoogle } from './auth/authetication.js';
+import { createUserWithPassword, signInWithPassword, signInWithGoogle, currentUser } from './auth/authetication.js';
 
-const containerRoot = document.getElementById('root');
-//Mostrar html correcto al recargar la pagina
-if(window.location.pathname === '/register'){
-    containerRoot.innerHTML = register().innerHTML;
-}
-else if(window.location.pathname === '/posting'){
-    containerRoot.innerHTML = timeLine().innerHTML;
-}
 //cambiar la url para que no se vea el gatito
 export const changeRoute = (hash) => {
-    if(hash === '#/register'){
-        window.history.replaceState({}, 'register' , '/register');
-    }
-    else if(hash === '#/posting'){
-        window.history.replaceState({} , 'posting' , '/posting');
-    }
+    // hash = '#/register
+    hash = hash.replace('#', '');
+    // hash = '/register'
+
+    window.history.replaceState({}, hash.replace('/', ''), hash);
+    // hash.replace('/', '') == 'register'
+    // /register
     return showTemplate(hash);
 }
 
-const showTemplate = (hash) => {
-    const containerRoot = document.getElementById('root')
-    const footer = document.getElementById('footer');
+export const showTemplate = (hash) => {
+    const containerRoot = document.getElementById('root');
+
+    // Aquí se carga el footer una sola vez
+    if (!document.getElementById('footer')) {
+        containerRoot.parentNode.insertBefore(footer(), containerRoot.nextSibling);
+    }
+
     switch (hash) {
         //asignamos un caso distinto para cada template
-        case "":
-        case '#/login':
+        case '/':
+        case '/login':
             containerRoot.classList.add('login');
             containerRoot.innerHTML = login().innerHTML;
 
@@ -39,16 +38,25 @@ const showTemplate = (hash) => {
                 // asignamos a variables los datos del formulario
                 const email = loginForm['email'].value
                 const password = loginForm['password'].value
-                signInWithPassword(email, password);
+
+
+                //aca validaremos los campos de enbtrada
+                if (email.length == 0) {
+                    alert("Por favor ingrese su email")
+                } else if ((password.length == 0)) {
+                    alert("Por favor ingrese su contraseña")
+                } else {
+                    signInWithPassword(email, password);
+                }
             });
 
             const loginWithGoogle = document.getElementById("iniciarConGoogle");
             loginWithGoogle.addEventListener("click", (event) => {
-                // window.location = '#/posting'
                 signInWithGoogle();
             });
+
             break;
-        case '#/register':
+        case '/register':
             containerRoot.innerHTML = register().innerHTML;
             const registerForm = document.getElementById("register-form");
             registerForm.addEventListener("submit", (event) => {
@@ -57,36 +65,35 @@ const showTemplate = (hash) => {
                 const name = registerForm['name'].value
                 const email = registerForm['email'].value
                 const password = registerForm['password'].value
+
                 createUserWithPassword(email, password, name);
             });
+
             const registerWithGoogle = document.getElementById("registerWithGoogle");
             registerWithGoogle.addEventListener("click", (event) => {
                 signInWithGoogle();
             });
+
             break;
-        case '#/posting':
+        case '/posting':
             containerRoot.classList.remove('login');
-            footer.classList.add('hide');
             containerRoot.classList.add('posting');
             containerRoot.innerHTML = timeLine().innerHTML;
 
             firestoreRead();
 
             break;
-        case '#/savePost':
-            const postData = { content: document.getElementById('post').value, email: 'paularamirezsot@gmail.com' };
+        case '/savePost':
+            const userActive = currentUser();
+            const postData = {
+                content: document.getElementById('post').value,
+                email: userActive.email,
+                uid: userActive.uid,
+                timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
+
+            };
+
             firestoreSave("posts", postData);
-
-            firestoreRead();
+            firestoreRead();     
     }
-}
-window.onpopstate = () => {
-    if(window.location.pathname === '/register'){
-        containerRoot.innerHTML = register().innerHTML;
-    }
-    else if(window.location.pathname === '/posting'){
-        containerRoot.innerHTML = timeLine().innerHTML;
-    }
-       
-
 }
