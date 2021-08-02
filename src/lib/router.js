@@ -78,12 +78,10 @@ export const showTemplate = (hash) => {
         case '/posting':
             containerRoot.classList.remove('login');
             containerRoot.classList.add('posting');
-            if(containerRoot.innerHTML.length == 0){
-                alert('no puedes ingresar un campo en blanco')
-            }else{
-                containerRoot.innerHTML = timeLine().innerHTML;
-                firestoreRead();
-            }
+   
+            containerRoot.innerHTML = timeLine().innerHTML;
+            firestoreRead();
+            
         
             
             
@@ -91,8 +89,12 @@ export const showTemplate = (hash) => {
             break;
         case '/savePost':
             const userActive = currentUser();
+            const validation = document.getElementById('post').value;
+            if(validation.length == 0){
+                alert('ingresa un campo correcto');
+            }
             const postData = {
-                content: document.getElementById('post').value,
+                content: validation,
                 email: userActive.email,
                 uid: userActive.uid,
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
