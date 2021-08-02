@@ -90,10 +90,10 @@ export const showTemplate = (hash) => {
                 email: userActive.email,
                 uid: userActive.uid,
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
-
             };
 
             firestoreSave("posts", postData);
-            firestoreRead();     
+            firestoreRead(); 
+            window.history.replaceState({}, 'posting', '/posting');
     }
 }
