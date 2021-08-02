@@ -81,10 +81,6 @@ export const showTemplate = (hash) => {
    
             containerRoot.innerHTML = timeLine().innerHTML;
             firestoreRead();
-            
-        
-            
-            
 
             break;
         case '/savePost':
@@ -99,6 +95,8 @@ export const showTemplate = (hash) => {
                 uid: userActive.uid,
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
                 displayname: userActive.displayName,
+                likescount : userActive.uid,
+                // likescount aun no esta lista estoy probando
             
 
             };

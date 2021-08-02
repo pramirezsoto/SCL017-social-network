@@ -4,14 +4,14 @@ export const timeLine = () => {
   const viewPosting =  `
   <div class="time-line">
     <div class="banner-left">
-      <a class="icon-home" href="">Inicio</a>
-      <a class="icon-newspaper" href="">Muro</a>
-      <a class="icon-user" href="">Perfil</a>
-      <a class="icon-exit" href="">Cerra sesión</a>
+      <a class="icon-home" href="">   Inicio</a>
+      <a class="icon-newspaper" href="">    Muro</a>
+      <a class="icon-user" href="">   Perfil</a>
+      <a class="icon-exit" href="">   Cerra sesión</a>
   
   </div>
     <div class="shared-today">
-      <input id="post" type="text" placeholder="Que te gustaria compartir hoy?">
+      <input id="post" class="post-timeline" type="text" placeholder="Que te gustaria compartir hoy?">
      
       <button id="shared" class="shared" onclick="window.location='#/savePost'">Publicar</button>
     
