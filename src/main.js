@@ -1,5 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
-
+import { myFunction } from './lib/index.js';
+import { firebaseConfig } from './lib/config/configFirebase.js';
 import { changeRoute } from './lib/router.js';
 
 const init = () => {
@@ -9,8 +10,6 @@ const init = () => {
         changeRoute(window.location.hash);
     });
 };
-import { myFunction } from './lib/index.js';
-import { firebaseConfig } from './lib/config/configFirebase.js';
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();

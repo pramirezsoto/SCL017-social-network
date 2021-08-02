@@ -171,13 +171,14 @@ html {
 /* Las lineas que estan comentadas, es para que vean un ejemplo de como 
   podemos utilizar los iconos */
 
-/* .icon-heart{
+.icon-heart{
     width: 20px;
     height: 20px;
+    text-transform: none;
   }
   .icon-heart:hover{
       color: red;
-  } */
+  }
 
 :root {
   --color-header-footer: linear-gradient(0deg, rgba(205, 208, 60, 0.8), rgba(205, 208, 60, 0.8)), linear-gradient(92.95deg, rgba(230, 58, 47, 0.2) 47.55%, rgba(119, 102, 102, 0) 74.23%), linear-gradient(0deg, rgba(237, 191, 101, 0.7), rgba(237, 191, 101, 0.7)), #0EE9EF;
@@ -284,10 +285,10 @@ footer p {
 
 #root .container-right{
   margin-top: 60px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
   background: #FFFFFF;
   border: 1px solid #000000;
   box-sizing: border-box;
@@ -382,6 +383,7 @@ font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   margin-top: 5%;
   width: 75%;
   height: 10%;
@@ -393,6 +395,11 @@ font-size: 1.5rem;
   font-family: var(--font-text-natural);
   font-size: 0.9rem;
 
+}
+
+#iniciarConGoogle:hover{
+  background: #3db9f7;
+  color: var(--color-text-white);
 }
 
 /* segunda pantalla register */
@@ -594,33 +601,9 @@ font-size: 1.5rem;
 }
 
 
-
-#container-posts .onePost {
-  margin: 50px;
-  width: 250px;
-  background-color: rgba(236, 231, 220, 0.7);
-  border: 5px dashed blue;
-}
-
-
-
-
-#container-posts .onePost {
-  margin: 50px;
-  width: 250px;
-  background-color: rgba(237, 191, 101, 0.7);
-  border: 5px dashed blue;
-}
-
-#container-posts .onePost p {
-  text-align: center;
-}
-
-
 @media (max-width: 780px){
   #root .container-right #login-form {
     margin-right: 5%;
-    width: 40%;
     padding-bottom: 5%;
   }
   #root .container-left .text-left{
@@ -651,9 +634,17 @@ font-size: 1.5rem;
   #root .container-left .text-left{
     display: none;
   }
+  #root .container-right{
+    margin-top: 10px;
+  }
+
   #root .container-right #login-form{
-    width: 70%;
+    width: 80%;
     height: auto;
+    text-align: center;
+  }
+  #root .container-right #login-form h3{
+    margin-top: 15px;
   }
   footer{
     height: 5rem;
@@ -671,14 +662,16 @@ font-size: 1.5rem;
     font-size: 0.8rem;
     margin-top: 5%;
   }
+
   .btn{
     font-size: 1rem;
   }
   .registerWithGoogle p{
     font-size: 0.8rem;
   }
-  
-
+  #iniciarConGoogle{
+    margin-top: 0;
+  }
 }
 
 

@@ -28,7 +28,7 @@ const showTemplate = (hash) => {
                 const password = loginForm['password'].value
 
 
-                //aca validaremos los campos de enbtrada
+                //aca validaremos los campos de entrada
                 if (email.length == 0) {
                     alert("Por favor ingrese su email")
                 } else if ((password.length == 0)) {
@@ -66,9 +66,15 @@ const showTemplate = (hash) => {
             containerRoot.classList.remove('login');
             footer.classList.add('hide');
             containerRoot.classList.add('posting');
-            containerRoot.innerHTML = timeLine().innerHTML;
-
-            firestoreRead();
+            if(containerRoot.innerHTML.length == 0){
+                alert('no puedes ingresar un campo en blanco')
+            }else{
+                containerRoot.innerHTML = timeLine().innerHTML;
+                firestoreRead();
+            }
+        
+            
+            
 
             break;
         case '#/savePost':
@@ -78,6 +84,8 @@ const showTemplate = (hash) => {
                 email: userActive.email,
                 uid: userActive.uid,
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
+                displayname: userActive.displayName,
+            
 
             };
             firestoreSave("posts", postData);
