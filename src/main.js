@@ -8,7 +8,9 @@ const init = () => {
     }
 
     window.onpopstate = () => {
-        showTemplate(window.location.pathname);
+        if (window.location.hash === '') {
+            showTemplate(window.location.pathname);
+        }
     }
     
     window.addEventListener('hashchange', () => {
