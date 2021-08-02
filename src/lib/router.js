@@ -1,22 +1,34 @@
 import { login } from './view/templateLogin.js'
 import { register } from './view/templateRegister.js'
 import { timeLine } from './view/templateTimeLine.js'
+import { footer } from './view/templateFooter.js'
 import { firestoreRead, firestoreSave } from './database/firestore.js'
 import { createUserWithPassword, signInWithPassword, signInWithGoogle, currentUser } from './auth/authetication.js';
 
-
-
+//cambiar la url para que no se vea el gatito
 export const changeRoute = (hash) => {
+    // hash = '#/register
+    hash = hash.replace('#', '');
+    // hash = '/register'
+
+    window.history.replaceState({}, hash.replace('/', ''), hash);
+    // hash.replace('/', '') == 'register'
+    // /register
     return showTemplate(hash);
 }
 
-const showTemplate = (hash) => {
-    const containerRoot = document.getElementById('root')
-    const footer = document.getElementById('footer');
+export const showTemplate = (hash) => {
+    const containerRoot = document.getElementById('root');
+
+    // Aquí se carga el footer una sola vez
+    if (!document.getElementById('footer')) {
+        containerRoot.parentNode.insertBefore(footer(), containerRoot.nextSibling);
+    }
+
     switch (hash) {
         //asignamos un caso distinto para cada template
-        case "":
-        case '#/login':
+        case '/':
+        case '/login':
             containerRoot.classList.add('login');
             containerRoot.innerHTML = login().innerHTML;
 
@@ -44,8 +56,7 @@ const showTemplate = (hash) => {
             });
 
             break;
-        case '#/register':
-
+        case '/register':
             containerRoot.innerHTML = register().innerHTML;
             const registerForm = document.getElementById("register-form");
             registerForm.addEventListener("submit", (event) => {
@@ -57,14 +68,15 @@ const showTemplate = (hash) => {
 
                 createUserWithPassword(email, password, name);
             });
+
             const registerWithGoogle = document.getElementById("registerWithGoogle");
             registerWithGoogle.addEventListener("click", (event) => {
                 signInWithGoogle();
             });
+
             break;
-        case '#/posting':
+        case '/posting':
             containerRoot.classList.remove('login');
-            footer.classList.add('hide');
             containerRoot.classList.add('posting');
             if(containerRoot.innerHTML.length == 0){
                 alert('no puedes ingresar un campo en blanco')
@@ -77,7 +89,7 @@ const showTemplate = (hash) => {
             
 
             break;
-        case '#/savePost':
+        case '/savePost':
             const userActive = currentUser();
             const postData = {
                 content: document.getElementById('post').value,
@@ -88,8 +100,8 @@ const showTemplate = (hash) => {
             
 
             };
-            firestoreSave("posts", postData);
 
-            firestoreRead();
+            firestoreSave("posts", postData);
+            firestoreRead();     
     }
 }
