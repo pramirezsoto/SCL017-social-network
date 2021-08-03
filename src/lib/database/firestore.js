@@ -18,12 +18,26 @@ export const firestoreRead = () => {
     containerPosts.innerHTML = "";
     firebase.firestore().collection("posts").orderBy("timestamp", "desc").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data()}`);
+            // console.log(`${doc.id} => ${doc.data()}`);
             
             
             const containerOnePost = postElement(doc.data());
-           
+            
             containerPosts.appendChild(containerOnePost);
+            
+           containerOnePost.lastElementChild.previousElementSibling.lastElementChild.addEventListener('click', likesCount)
+            
+            
         });
     });
 }
+
+// conteo de likes
+
+const likesCount = (event)=>{
+    let saveId = event.srcElement.parentNode.parentNode.firstChild.nextElementSibling.id
+    console.log(saveId)
+} 
+
+
+

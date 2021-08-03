@@ -6,7 +6,7 @@ export const postElement = (postData) => {
     const dateString = postDate.toLocaleDateString();
     const timeString = postDate.toLocaleTimeString();
     const newPosting = `
-   <div class="post-head">
+   <div class="post-head" id="${postData.uid}">
       <div class="img-profile"><img src="img/avatar.png" alt="img-avatar"></div>
       <div>
          <div class="name-posting">${postData.displayname} ha compartido: </div>
@@ -15,10 +15,10 @@ export const postElement = (postData) => {
          </div>
       </div>
    </div>
-   <div class="posting">${postData.content}</div>
+   <div class="posting">${postData.content} </div>
    <hr>
    <div class="icons">
-      <a class="icon-heart" href=""></a>
+      <span class="icon-heart like" href=""></span>
    </div>
    <hr>
     `;
