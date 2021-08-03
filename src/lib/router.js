@@ -66,7 +66,18 @@ export const showTemplate = (hash) => {
                 const email = registerForm['email'].value
                 const password = registerForm['password'].value
 
+                 //aca validaremos los campos de entrada
+                 if(name.length == 0) {
+                     alert("Por favor ingrese su nombre")
+                 }
+                 if (email.length == 0) {
+                    alert("Por favor ingrese su email")
+                } else if ((password.length == 0)) {
+                    alert("Por favor ingrese su contraseña")
+                } else {
+
                 createUserWithPassword(email, password, name);
+                }
             });
 
             const registerWithGoogle = document.getElementById("registerWithGoogle");
