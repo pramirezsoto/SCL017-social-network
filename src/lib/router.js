@@ -95,8 +95,6 @@ export const showTemplate = (hash) => {
                 uid: userActive.uid,
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
                 displayname: userActive.displayName,
-                likescount : userActive.uid,
-                // likescount aun no esta lista estoy probando
             
 
             };
