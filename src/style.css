@@ -673,6 +673,38 @@ font-size: 1.5rem;
     margin-top: 0;
   }
 }
+/* boton dos puntitos*/
+.icon-flickr:before {
+  content: "\eaa3";
+}
+
+.boton{
+  background-color:white;
+  color: #000000;
+  font-weight: bolder;
+}
+
+.links .a{
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  padding: 13px; ;
+}
+.links{
+  background-color: #f9f9f9;
+  width: 185px;
+  /*display: none; */
+}
+.links .a:hover{
+  background-color: #f1f1f1;
+}
+.desplagable:hover .links{
+  display: block ;
+}
+.desplagable{
+  position: absolute;
+}
+
 
 
 

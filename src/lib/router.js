@@ -84,10 +84,6 @@ export const showTemplate = (hash) => {
                 containerRoot.innerHTML = timeLine().innerHTML;
                 firestoreRead();
             }
-        
-            
-            
-
             break;
         case '/savePost':
             const userActive = currentUser();
@@ -97,12 +93,10 @@ export const showTemplate = (hash) => {
                 uid: userActive.uid,
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
                 displayname: userActive.displayName,
-            
-
             };
 
             firestoreSave("posts", postData);
             firestoreRead(); 
             window.history.replaceState({}, 'posting', '/posting');
-    }
-}
+
+        }}

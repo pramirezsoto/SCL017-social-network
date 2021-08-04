@@ -8,6 +8,13 @@ export const postElement = (postData) => {
     const newPosting = `
    <div class="post-head">
       <div class="img-profile"><img src="img/avatar.png" alt="img-avatar"></div>
+      <div class="desplegable">
+         <button class="boton"><span class="icon-flickr"></span></button>
+         <div class="links">
+            <button class="a" href='#' >Editar post</button>
+            <button class="a" href='#' onclick="eliminar('${doc.data}')">Eliminar post<button>
+         </div>
+      </div>
       <div>
          <div class="name-posting">${postData.displayname} ha compartido: </div>
          <div class="date">
@@ -15,6 +22,7 @@ export const postElement = (postData) => {
          </div>
       </div>
    </div>
+
    <div class="posting">${postData.content}</div>
    <hr>
    <div class="icons">
