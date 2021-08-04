@@ -11,8 +11,8 @@ export const postElement = (postData) => {
       <div class="desplegable">
          <button class="boton"><span class="icon-flickr"></span></button>
          <div class="links">
-            <button class="a" href='#' >Editar post</button>
-            <button class="a" href='#' onclick="eliminar('${doc.data}')">Eliminar post<button>
+            <button class="a" href='#'>Editar post</button>
+            <button class="a" href='#'>Eliminar post<button>
          </div>
       </div>
       <div>

@@ -108,9 +108,8 @@ export const showTemplate = (hash) => {
             firestoreSave("posts", postData);
             firestoreRead(); 
             window.history.replaceState({}, 'posting', '/posting');
-
-
         }}
+      
 
 
 
