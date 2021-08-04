@@ -66,17 +66,17 @@ export const showTemplate = (hash) => {
                 const email = registerForm['email'].value
                 const password = registerForm['password'].value
 
-                 //aca validaremos los campos de entrada
-                 if(name.length == 0) {
-                     alert("Por favor ingrese su nombre")
-                 }
-                 if (email.length == 0) {
+                //aca validaremos los campos de entrada
+                if (name.length == 0) {
+                    alert("Por favor ingrese su nombre")
+                }
+                if (email.length == 0) {
                     alert("Por favor ingrese su email")
                 } else if ((password.length == 0)) {
                     alert("Por favor ingrese su contraseña")
                 } else {
 
-                createUserWithPassword(email, password, name);
+                    createUserWithPassword(email, password, name);
                 }
             });
 
@@ -89,33 +89,43 @@ export const showTemplate = (hash) => {
         case '/posting':
             containerRoot.classList.remove('login');
             containerRoot.classList.add('posting');
-   
+
             containerRoot.innerHTML = timeLine().innerHTML;
             firestoreRead();
-            
-        
-            
-            
+
+
+
+
 
             break;
         case '/savePost':
             const userActive = currentUser();
             const validation = document.getElementById('post').value;
-            if(validation.length == 0){
+            if (validation.length == 0) {
                 alert('ingresa un campo correcto');
+            }
+
+            let userImage;
+            //coneccion normal
+            if (userActive.photoURL == undefined) {
+                userImage = 'img/avatar.png'
+           //coneccion por google
+            } else {
+                userImage = userActive.photoURL
             }
             const postData = {
                 content: validation,
                 email: userActive.email,
                 uid: userActive.uid,
+                photo: userImage,
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
                 displayname: userActive.displayName,
-            
+
 
             };
 
             firestoreSave("posts", postData);
-            firestoreRead(); 
+            firestoreRead();
             window.history.replaceState({}, 'posting', '/posting');
     }
 }

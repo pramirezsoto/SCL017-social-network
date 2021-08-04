@@ -517,6 +517,10 @@ font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
 }
+.post-head .user-photo{
+  border-radius: 50%;
+  width: 100px;
+}
 
 .date{
   display: flex;
@@ -538,15 +542,13 @@ font-size: 1.5rem;
   height: 100%;
 }
 
-
+/*estas clases quedan en desuso */
 .img-profile{
   text-align: left;
 }
 
 .img-profile img{
   width: 100px;
-
-  
 }
 .banner-left{
   position: absolute;
