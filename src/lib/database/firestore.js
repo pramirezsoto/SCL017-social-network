@@ -36,6 +36,9 @@ export const firestoreRead = () => {
 const likesCount = (event)=>{
     let saveId = event.srcElement.parentNode.parentNode.firstChild.nextElementSibling.id
     console.log(saveId)
+
+    let saveIdPost = event.srcElement.parentNode.parentNode.firstChild.nextElementSibling.id
+    console.log(saveIdPost)
 } 
 
 

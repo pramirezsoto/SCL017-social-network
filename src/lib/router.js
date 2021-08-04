@@ -126,6 +126,7 @@ export const showTemplate = (hash) => {
             window.history.replaceState({}, 'posting', '/posting');
     }
 }
+       
 
 
 

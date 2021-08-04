@@ -1,4 +1,5 @@
 export const postElement = (postData) => {
+
    const posting = document.createElement('div');
    posting.classList.add('post');
    const postDate = new Date(postData.timestamp.seconds * 1000)
