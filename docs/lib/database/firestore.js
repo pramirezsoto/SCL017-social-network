@@ -18,6 +18,7 @@ export const firestoreRead = () => {
     containerPosts.innerHTML = "";
     firebase.firestore().collection("posts").orderBy("timestamp", "desc").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+            // console.log(`${doc.id} => ${doc.data()}`);
             
             
             const containerOnePost = postElement(doc.data());
