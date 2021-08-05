@@ -2,7 +2,7 @@ import { login } from './view/templateLogin.js'
 import { register } from './view/templateRegister.js'
 import { timeLine } from './view/templateTimeLine.js'
 import { footer } from './view/templateFooter.js'
-import { firestoreRead, firestoreSave } from './database/firestore.js'
+import { firestoreRead, firestoreSave, firestoreLike } from './database/firestore.js'
 import { createUserWithPassword, signInWithPassword, signInWithGoogle, currentUser } from './auth/authetication.js';
 
 //cambiar la url para que no se vea el gatito
@@ -113,7 +113,7 @@ export const showTemplate = (hash) => {
             const postData = {
                 content: validation,
                 email: userActive.email,
-                uid: userActive.uid,
+                useruid: userActive.uid,
                 photo: userImage,
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
                 displayname: userActive.displayName,
@@ -121,11 +121,12 @@ export const showTemplate = (hash) => {
 
             };
 
+           
             firestoreSave("posts", postData);
             firestoreRead();
             window.history.replaceState({}, 'posting', '/posting');
     }
-}
+};
        
 
 

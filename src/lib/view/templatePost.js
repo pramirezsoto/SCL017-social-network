@@ -1,4 +1,4 @@
-export const postElement = (postData) => {
+export const postElement = (postId , postData) => {
 
    const posting = document.createElement('div');
    posting.classList.add('post');
@@ -8,9 +8,9 @@ export const postElement = (postData) => {
    const timeString = postDate.toLocaleTimeString();
   
    const newPosting = `
-   <div class="post-head" id="${postData.uid}">
+   <div class="post-head" id="${postId}">
       <img class="user-photo"src="${postData.photo}">
-      <div class="name-posting">${postData.displayname} ha compartido: </div>
+      <div  class="name-posting">${postData.displayname} ha compartido: </div>
       <div class="date">
          ${dateString} ${timeString}
 
