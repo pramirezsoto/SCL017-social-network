@@ -488,7 +488,7 @@ font-size: 1.5rem;
 }
 
 .post-head img{
-  width: 80px;
+  width: 60px;
   border-radius: 50px;
 }
 .post-head .user-photo{
@@ -602,7 +602,7 @@ padding: 3px;
   width: 20px;
   height: 20px;
   text-decoration: none;
-  color: black;
+  color: pink;
   
 }
 .icon-heart:hover{
@@ -702,7 +702,5 @@ padding: 3px;
     font-size: 0.8rem;
   }
 }
-
-
 
 
