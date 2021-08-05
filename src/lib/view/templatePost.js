@@ -1,4 +1,4 @@
-export const postElement = (postData, docId) => {
+export const postElement = (postId , postData) => {
 
    const posting = document.createElement('div');
    posting.classList.add('post');
@@ -8,13 +8,13 @@ export const postElement = (postData, docId) => {
    const timeString = postDate.toLocaleTimeString();
   
    const newPosting = `
-   <div class="post-head" id="${postData.useruid}">
-      <input type="hidden" id="${docId}">
-      <div> <img class="user-photo" src="${postData.photo}"> </div>
+
+   <div class="post-head" id="${postId}">
+      <img class="user-photo"src="${postData.photo}">
       <div class="name-posting">${postData.displayname} ha compartido: </div>
       <div class="icon-remove">
-         <button class="icon-pencil" onclick="window.location='#/editPost/${docId}'"></button>
-         <button class="icon-bin" onclick="window.location='#/deletePost/${docId}'"></button>
+         <button class="icon-pencil" onclick="window.location='#/editPost/${postId}'"></button>
+         <button class="icon-bin" onclick="window.location='#/deletePost/${postId}'"></button>
       </div>
    </div>
    <div class="date">

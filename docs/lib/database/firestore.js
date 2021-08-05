@@ -32,6 +32,15 @@ export const firestoreRead = () => {
     });
 }
 
+//Eliminar post//
+export const firestoreDelete = async (docId) => {
+    await firebase.firestore().collection("posts").doc(docId).delete().then(() => {
+        console.log("Document successfully deleted!");
+    }).catch((error) => {
+        console.error("Error removing document: ", error);
+    });
+}
+
 // conteo de likes
 
 const likesCount = (event)=>{
