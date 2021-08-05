@@ -2,6 +2,7 @@ import { login } from './view/templateLogin.js'
 import { register } from './view/templateRegister.js'
 import { timeLine } from './view/templateTimeLine.js'
 import { footer } from './view/templateFooter.js'
+
 import { firestoreRead, firestoreSave, firestoreDelete, firestoreLike } from './database/firestore.js'
 import { createUserWithPassword, signInWithPassword, signInWithGoogle, currentUser } from './auth/authetication.js';
 //import {eliminar} from './database/firestore.js'//
@@ -128,8 +129,9 @@ export const showTemplate = async(hash) => {
             window.history.replaceState({}, 'posting', '/posting');
             showTemplate('/posting');
     }
-
-    if (hash.startsWith('/deletePost')) {
+};
+       
+      if (hash.startsWith('/deletePost')) {
       const docId = hash.replace('/deletePost/', '');
       await firestoreDelete(docId);
       
