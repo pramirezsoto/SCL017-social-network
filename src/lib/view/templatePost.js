@@ -1,37 +1,32 @@
-export const postElement = (postData) => {
-    const posting = document.createElement('div');
-    posting.classList.add('post');
-    const postDate = new Date(postData.timestamp.seconds*1000)
-    
-    const dateString = postDate.toLocaleDateString();
-    const timeString = postDate.toLocaleTimeString();
-    const newPosting = `
-   <div class="post-head" id="${postData.uid}">
-      <div class="img-profile"><img src="img/avatar.png" alt="img-avatar"></div>
-      <div class="desplegable">
-         <button class="boton"><span class="icon-flickr"></span></button>
-         <div class="links">
-            <button class="a" href='#'>Editar post</button>
-            <button class="a" href='#'>Eliminar post<button>
-         </div>
-      </div>
-      <div>
-         <div class="name-posting">${postData.displayname} ha compartido: </div>
-         <div class="date">
-            ${dateString} ${timeString}
-         </div>
+export const postElement = (postData, docId) => {
+
+   const posting = document.createElement('div');
+   posting.classList.add('post');
+   const postDate = new Date(postData.timestamp.seconds * 1000)
+
+   const dateString = postDate.toLocaleDateString();
+   const timeString = postDate.toLocaleTimeString();
+  
+   const newPosting = `
+   <div class="post-head" id="${postData.useruid}">
+      <input type="hidden" id="${docId}">
+      <div> <img class="user-photo" src="${postData.photo}"> </div>
+      <div class="name-posting">${postData.displayname} ha compartido: </div>
+      <div class="icon-remove">
+         <button class="icon-pencil" onclick="window.location='#/editPost/${docId}'"></button>
+         <button class="icon-bin" onclick="window.location='#/deletePost/${docId}'"></button>
       </div>
    </div>
+   <div class="date">
+      ${dateString} ${timeString}
+   </div>
    <div class="posting">${postData.content}</div>
-=======
-   <div class="posting">${postData.content} </div>
    <hr>
    <div class="icons">
       <span class="icon-heart like" href=""></span>
    </div>
-   <hr>
-    `;
+   <hr>`;
 
-    posting.innerHTML = newPosting;
-    return posting;
+   posting.innerHTML = newPosting;
+   return posting;
 }

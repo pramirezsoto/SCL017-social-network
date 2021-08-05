@@ -21,7 +21,7 @@ export const firestoreRead = () => {
             // console.log(`${doc.id} => ${doc.data()}`);
             
             
-            const containerOnePost = postElement(doc.data());
+            const containerOnePost = postElement(doc.data(), doc.id);
             
             containerPosts.appendChild(containerOnePost);
             

@@ -491,6 +491,10 @@ font-size: 1.5rem;
   width: 80px;
   border-radius: 50px;
 }
+.post-head .user-photo{
+  border-radius: 50%;
+  width: 100px;
+}
 
 .date{
   display: flex;
@@ -512,15 +516,13 @@ font-size: 1.5rem;
   height: 100%;
 }
 
-
+/*estas clases quedan en desuso */
 .img-profile{
   text-align: left;
 }
 
 .img-profile img{
   width: 100px;
-
-  
 }
 .banner-left{
   position: relative;
@@ -700,39 +702,5 @@ padding: 3px;
     font-size: 0.8rem;
   }
 }
-/* boton dos puntitos*/
-.icon-flickr:before {
-  content: "\eaa3";
-}
-
-.boton{
-  background-color:white;
-  color: #000000;
-  font-weight: bolder;
-}
-
-.links .a{
-  text-decoration: none;
-  color: #000000;
-  display: block;
-  padding: 13px; ;
-}
-.links{
-  background-color: #f9f9f9;
-  width: 185px;
-  /*display: none; */
-}
-.links .a:hover{
-  background-color: #f1f1f1;
-}
-.desplagable:hover .links{
-  display: block ;
-}
-.desplagable{
-  position: absolute;
-}
-
-
-
 
 
