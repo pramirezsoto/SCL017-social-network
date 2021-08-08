@@ -6,30 +6,62 @@ import { currentUser } from '../auth/authetication.js'
 // guarda los datos
 export const firestoreSave = (collectionName, data) => {
     firebase.firestore().collection(collectionName).add(data)
-        .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-            console.error("Error adding document: ", error);
-        });
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });
 }
 
 // leer y pintar los datos
 export const firestoreRead = () => {
     const containerPosts = document.getElementById("container-posts");
     containerPosts.innerHTML = "";
-    firebase.firestore().collection("posts").orderBy("timestamp", "desc").get().then((querySnapshot) => {
+    let uid;
+    
+    firebase.firestore().collection("posts").orderBy("timestamp", "desc").get()
+    .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
+            firebase.auth().onAuthStateChanged((user) => {
+                
+                uid = user.uid;
+                
+                
+                
+                firebase.firestore().collection("posts").doc(doc.id).collection("users").doc(uid).get() 
+                .then((userLikes) =>{
+                    
+                    if(userLikes.data() != undefined ){
+                        console.log('user le ha dado like')
+                    }else{
+                        console.log('user no ha dado like')
+                    }
+                    
+                    console.log(doc.data())
+                    let countLikes = doc.data().countLikes;
+                    
+                    const containerOnePost = postElement(doc.id, doc.data(), countLikes);
+                    
+                    containerPosts.appendChild(containerOnePost);
+                    
+                    containerOnePost.lastElementChild.previousElementSibling.lastElementChild.addEventListener('click', likesCount, firestoreLike,)
+                    
+                    
+                    
+                    
+                    
+                    
+                })
+            })
             
-            const containerOnePost = postElement(doc.id, doc.data());
-            
-            containerPosts.appendChild(containerOnePost);
-            
-            containerOnePost.lastElementChild.previousElementSibling.lastElementChild.addEventListener('click', likesCount)
-            
-            
-        });
+        })
+        
+    })
+    .catch((error)=>{
+        console.log(error)
     });
+    
 }
 
 
@@ -43,12 +75,21 @@ const likesCount = (event) => {
     let user =  currentUser()
     console.log(user.uid)
     
-    const ObjectData = {
+    const objectData = {
         userid: user.uid,
         postid: saveId,
+        
+        
     }
-    let typeChange = "decrement"
-    firestoreLike(ObjectData, typeChange)
+    let typeChange;
+    if(objectData.userid  && objectData.postid == event ){
+        typeChange = "decrement"
+        
+    }else{
+        typeChange = "increment"
+    }
+    
+    firestoreLike(objectData, typeChange)
     
     
 }
@@ -69,15 +110,17 @@ export const firestoreLike = (likesPost, typeLike) =>{
     }
     
     
-    const storyRef = db.collection('post-like').doc(likesPost.postid);
+    const storyRef = db.collection('posts').doc(likesPost.postid);
     
-    const userLike = db.collection('post-like').doc(likesPost.postid).collection('users').doc(likesPost.userid)
+    const userLike = db.collection('posts').doc(likesPost.postid).collection('users').doc(likesPost.userid)
+    
     
     const batch = db.batch();
     batch.set(storyRef, {}, {merge: true});
     batch.set(userLike, {}, {merge: true})
-    batch.update(storyRef,{count: value});
-    batch.update(userLike,{count: value});
+    batch.update(storyRef,{countLikes: value});
+    batch.update(userLike,{countLikes: value});
+    
     
     batch.commit();
     

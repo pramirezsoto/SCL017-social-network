@@ -487,13 +487,9 @@ font-size: 1.5rem;
   justify-content: space-evenly;
 }
 
-.post-head img{
-  width: 60px;
-  border-radius: 50px;
-}
 .post-head .user-photo{
   border-radius: 50%;
-  width: 100px;
+  width: 80px;
 }
 
 .date{
@@ -516,14 +512,7 @@ font-size: 1.5rem;
   height: 100%;
 }
 
-/*estas clases quedan en desuso */
-.img-profile{
-  text-align: left;
-}
 
-.img-profile img{
-  width: 100px;
-}
 .banner-left{
   position: relative;
   width: 65%;
@@ -537,14 +526,6 @@ font-size: 1.5rem;
   flex-wrap: nowrap;
   grid-column-start: 1;
  
-}
-
-.icon-home{
-  margin-top: 1rem;
-  margin-left: 1rem;
-  font-family: var(--font-small-text);
-  color: var(--color-font-small-text);
-  text-decoration: none;
 }
 
 .icon-user {
@@ -601,6 +582,7 @@ padding: 3px;
 .icon-heart{
   width: 20px;
   height: 20px;
+  cursor: pointer;
   text-decoration: none;
   color: pink;
   
@@ -608,6 +590,9 @@ padding: 3px;
 .icon-heart:hover{
     color: red;
 
+}
+.icon-heart:active{
+  color: red;
 }
 
 @media (max-width: 780px){
@@ -654,6 +639,7 @@ padding: 3px;
   }
   #root .container-right{
     margin-top: 10px;
+  
   }
 
   #root .container-right #login-form{
@@ -701,6 +687,21 @@ padding: 3px;
   .banner-left{
     font-size: 0.8rem;
   }
+
+  .banner-right{
+    font-size: 0.5rem;
+    padding: 10px;
+  }
+  .post-head .user-photo{
+    border-radius: 50%;
+    width: 60px;
+  }
+  .icon-user, .icon-newspaper, .icon-exit{
+    margin-left: 0px;
+  }
+
+
+
 }
 
 

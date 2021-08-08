@@ -105,10 +105,10 @@ export const showTemplate = async(hash) => {
             }
 
             let userImage;
-            //coneccion normal
+            //conexion normal
             if (userActive.photoURL == undefined) {
                 userImage = 'img/avatar.png'
-           //coneccion por google
+           //conexion por google
             } else {
                 userImage = userActive.photoURL
             }
@@ -119,6 +119,7 @@ export const showTemplate = async(hash) => {
                 photo: userImage,
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
                 displayname: userActive.displayName,
+                countLikes: 0,
 
 
             };

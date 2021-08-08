@@ -1,4 +1,4 @@
-export const postElement = (postId , postData) => {
+export const postElement = (postId , postData, countLikes) => {
 
    const posting = document.createElement('div');
    posting.classList.add('post');
@@ -22,7 +22,7 @@ export const postElement = (postId , postData) => {
    <div class="posting">${postData.content}</div>
    <hr>
    <div class="icons">
-      <span class="icon-heart like" href=""></span>
+      <span class="icon-heart like" href="">${countLikes}</span>
    </div>
    <hr>`;
 
