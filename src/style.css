@@ -1,16 +1,11 @@
-
 html {
   height: 100%;
 }
 
-
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?vtzdfx');
-  src:  url('fonts/icomoon.eot?vtzdfx#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?vtzdfx') format('truetype'),
-    url('fonts/icomoon.woff?vtzdfx') format('woff'),
-    url('fonts/icomoon.svg?vtzdfx#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?vtzdfx');
+  src: url('fonts/icomoon.eot?vtzdfx#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?vtzdfx') format('truetype'), url('fonts/icomoon.woff?vtzdfx') format('woff'), url('fonts/icomoon.svg?vtzdfx#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,7 +20,6 @@ html {
   text-transform: none;
   line-height: 2;
   letter-spacing: 1px;
-
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,144 +28,185 @@ html {
 .icon-home:before {
   content: "\e900";
 }
+
 .icon-newspaper:before {
   content: "\e904";
 }
+
 .icon-pencil:before {
   content: "\e905";
 }
+
 .icon-image:before {
   content: "\e90d";
 }
+
 .icon-camera:before {
   content: "\e90f";
 }
+
 .icon-envelop:before {
   content: "\e945";
 }
+
 .icon-mobile:before {
   content: "\e958";
 }
+
 .icon-undo2:before {
   content: "\e967";
 }
+
 .icon-redo2:before {
   content: "\e968";
 }
+
 .icon-bubble:before {
   content: "\e96b";
 }
+
 .icon-bubbles:before {
   content: "\e96c";
 }
+
 .icon-bubbles2:before {
   content: "\e96d";
 }
+
 .icon-bubble2:before {
   content: "\e96e";
 }
+
 .icon-bubbles3:before {
   content: "\e96f";
 }
+
 .icon-user:before {
   content: "\e971";
 }
+
 .icon-users:before {
   content: "\e972";
 }
+
 .icon-user-plus:before {
   content: "\e973";
 }
+
 .icon-user-check:before {
   content: "\e975";
 }
+
 .icon-user-tie:before {
   content: "\e976";
 }
+
 .icon-spinner11:before {
   content: "\e984";
 }
+
 .icon-key:before {
   content: "\e98d";
 }
+
 .icon-lock:before {
   content: "\e98f";
 }
+
 .icon-unlocked:before {
   content: "\e990";
 }
+
 .icon-cog:before {
   content: "\e994";
 }
+
 .icon-cogs:before {
   content: "\e995";
 }
+
 .icon-bin:before {
   content: "\e9ac";
 }
+
 .icon-bin2:before {
   content: "\e9ad";
 }
+
 .icon-switch:before {
   content: "\e9b6";
 }
+
 .icon-list:before {
   content: "\e9ba";
 }
+
 .icon-menu3:before {
   content: "\e9bf";
 }
+
 .icon-sphere:before {
   content: "\e9c9";
 }
+
 .icon-brightness-contrast:before {
   content: "\e9d6";
 }
+
 .icon-star-full:before {
   content: "\e9d9";
 }
+
 .icon-heart:before {
   content: "\e9da";
 }
+
 .icon-warning:before {
   content: "\ea07";
 }
+
 .icon-enter:before {
   content: "\ea13";
 }
+
 .icon-exit:before {
   content: "\ea14";
 }
+
 .icon-loop2:before {
   content: "\ea2e";
 }
+
 .icon-circle-down:before {
   content: "\ea43";
 }
+
 .icon-share:before {
   content: "\ea7d";
 }
+
 .icon-mail4:before {
   content: "\ea86";
 }
+
 .icon-google-plus:before {
   content: "\ea8b";
 }
+
 .icon-flickr:before {
   content: "\eaa3";
 }
+
 .icon-flickr2:before {
   content: "\eaa4";
 }
+
 .icon-github:before {
   content: "\eab0";
 }
 
-
 /* Las lineas que estan comentadas, es para que vean un ejemplo de como 
   podemos utilizar los iconos */
-
-
 
 :root {
   --color-header-footer: linear-gradient(0deg, rgba(205, 208, 60, 0.8), rgba(205, 208, 60, 0.8)), linear-gradient(92.95deg, rgba(230, 58, 47, 0.2) 47.55%, rgba(119, 102, 102, 0) 74.23%), linear-gradient(0deg, rgba(237, 191, 101, 0.7), rgba(237, 191, 101, 0.7)), #0EE9EF;
@@ -212,7 +247,6 @@ header img {
   width: 100%;
   height: 3rem;
   margin-top: 2%;
-
   background: var(--color-header-footer);
   box-shadow: var(--color-header-footer);
 }
@@ -227,20 +261,19 @@ footer p {
   color: #FFFFE0;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
 /* primera pantalla login */
 
-.login{
+.login {
   height: 75vh;
   display: flex;
   justify-content: space-around;
 }
 
-.banner-right{
-
+.banner-right {
   position: relative;
   width: 65%;
   height: 100%;
@@ -258,7 +291,6 @@ footer p {
   grid-column-start: 4;
 }
 
-
 #root .container-left img {
   width: 50%;
   margin-left: 15%;
@@ -273,10 +305,10 @@ footer p {
   text-align: center;
   color: #000000;
   font-family: var(--font-title);
-  margin-left: 5%;  
+  margin-left: 5%;
 }
 
-#root .container-right{
+#root .container-right {
   margin-top: 60px;
   text-align: center;
   display: flex;
@@ -290,18 +322,17 @@ footer p {
   border-radius: 15px;
 }
 
-#root .container-right #login-form{
+#root .container-right #login-form {
   width: 95%;
 }
 
-#root .container-right #login-form p  {
-font-family: var(--font-title);
-color: var(--color-title);
-font-size: 1.5rem;
+#root .container-right #login-form p {
+  font-family: var(--font-title);
+  color: var(--color-title);
+  font-size: 1.5rem;
 }
 
-
-.log-in{
+.log-in {
   margin-top: 8%;
   width: 95%;
   padding: 3%;
@@ -314,10 +345,9 @@ font-size: 1.5rem;
   color: var(--color-header-footer);
   font-family: var(--font-title);
   font-size: 1rem;
-
-
 }
-#iniciar:hover{
+
+#iniciar:hover {
   background-color: var(--color-title);
   border: 1px solid black;
   color: var(--color-text-white);
@@ -344,9 +374,9 @@ font-size: 1.5rem;
 #iniciarConGoogle img {
   width: 22px;
   margin-right: 15px;
-  
 }
-#iniciarConGoogle{
+
+#iniciarConGoogle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -361,17 +391,16 @@ font-size: 1.5rem;
   border-radius: 20px;
   font-family: var(--font-text-natural);
   font-size: 0.9rem;
-
 }
 
-#iniciarConGoogle:hover{
+#iniciarConGoogle:hover {
   background: #3db9f7;
   color: var(--color-text-white);
 }
 
 /* segunda pantalla register */
 
-.form{
+.form {
   margin-top: 3%;
   display: flex;
   flex-direction: column;
@@ -384,21 +413,20 @@ font-size: 1.5rem;
   border-radius: 15px;
 }
 
-.form h1{
+.form h1 {
   font-family: var(--font-title);
   color: var(--color-title);
-  font-size:1.5rem;
+  font-size: 1.5rem;
 }
 
-#root .contenedor-derecho{
+#root .contenedor-derecho {
   width: 95%;
   margin-top: 2%;
   background: #FFFFFF;
   text-align: center;
-
 }
 
-#name , #email , #password{
+#name, #email, #password {
   width: 95%;
   margin-top: 4%;
   background: #FFFFFF;
@@ -410,9 +438,7 @@ font-size: 1.5rem;
   color: var(--color-text-imputs);
   font-size: 1rem;
   border-radius: 10px;
-
 }
-
 
 #root .contenedor-derecho .iniciarSesion {
   margin-top: 8%;
@@ -429,8 +455,6 @@ font-size: 1.5rem;
   font-size: 1rem;
 }
 
-
- 
 .btn {
   margin-top: 10%;
   width: 95%;
@@ -443,14 +467,16 @@ font-size: 1.5rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   color: var(--color-title);
-  font-weight: bold;  
-} 
-.btn:hover{
+  font-weight: bold;
+}
+
+.btn:hover {
   background-color: var(--color-title);
   border: 1px solid black;
   color: var(--color-text-white);
 }
-.registerWithGoogle{
+
+.registerWithGoogle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -465,55 +491,79 @@ font-size: 1.5rem;
   border-radius: 20px;
   font-family: var(--font-text-natural);
   font-size: 0.9rem;
-
 }
-.registerWithGoogle img{
+
+.registerWithGoogle img {
   width: 22px;
   margin-right: 15px;
 }
 
-.registerWithGoogle:hover{
-  background:#3db9f7;
+.registerWithGoogle:hover {
+  background: #3db9f7;
 }
 
 /* pantalla 3 time line */
 
-.post{
- padding-top: 35px; 
+#container-posts{
+  margin-top: 8%;
 }
 
-.post-head{
+.post {
+  padding-top: 35px;
+}
+
+.post-head {
   display: flex;
   justify-content: space-evenly;
 }
 
-.post-head .user-photo{
+.post-head .user-photo {
   border-radius: 50%;
   width: 80px;
 }
 
-.date{
+.date {
   display: flex;
   flex-direction: column;
 }
 
-.icons{
+.icons {
   display: flex;
   justify-content: space-between;
 }
 
-.posting{
+.posting {
   text-align: center;
 }
 
-.time-line{
+.posting .content {
+  font-size: 24px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.posting .image-upload {
+  border-radius: 5px;
+  width: 75%;
+  height: 300px;
+}
+
+.time-line {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: 100%;
 }
 
-
-.banner-left{
+.banner-left {
   position: relative;
   width: 65%;
   height: 100%;
@@ -525,7 +575,6 @@ font-size: 1.5rem;
   flex-direction: column;
   flex-wrap: nowrap;
   grid-column-start: 1;
- 
 }
 
 .icon-user {
@@ -536,15 +585,7 @@ font-size: 1.5rem;
   text-decoration: none;
 }
 
-.icon-newspaper{
-  margin-top: 1rem;
-  margin-left: 1rem;
-  font-family: var(--font-small-text);
-  color: var(--color-font-small-text);
-  text-decoration: none;
-  
-}
-.icon-exit{
+.icon-newspaper {
   margin-top: 1rem;
   margin-left: 1rem;
   font-family: var(--font-small-text);
@@ -552,172 +593,158 @@ font-size: 1.5rem;
   text-decoration: none;
 }
 
-.shared-today{
+.icon-exit {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-family: var(--font-small-text);
+  color: var(--color-font-small-text);
+  text-decoration: none;
+}
+
+.shared-today {
   grid-column-start: 2;
   grid-column-end: 4;
   text-align: center;
   margin-top: 5%;
 }
 
-.post-timeline{
+.post-timeline {
   width: 80%;
   padding: 5px;
-  background:var(--color-background-banners);
+  background: var(--color-background-banners);
   border-radius: 10px;
   border: 1px solid black;
   text-align: center;
 }
 
-#shared{
-width: 15%;
-border-radius: 5px;
-border: 1px solid;
-padding: 3px;
+#shared {
+  width: 15%;
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 3px;
 }
 
-#shared:hover{
+#shared:hover {
   background: #3db9f7;
 }
 
-.icon-heart{
+.icon-heart {
   width: 20px;
   height: 20px;
   cursor: pointer;
   text-decoration: none;
-  
-
-  
 }
 
-.icon-heart .active{
+.icon-heart .active {
   color: red
 }
 
-
-.icon-heart:hover{
-    color: red;
-
-}
-.icon-heart:active{
-transform: scale(.9);
-
-}
-.active{
-   color: red;
+.icon-heart:hover {
+  color: red;
 }
 
-.icon-hear, .desactive{
-  color:#000000
+.icon-heart:active {
+  transform: scale(.9);
 }
 
+.active {
+  color: red;
+}
 
-@media (max-width: 780px){
+.icon-hear, .desactive {
+  color: #000000
+}
+
+@media (max-width: 780px) {
   #root .container-right #login-form {
     margin-right: 5%;
     padding-bottom: 5%;
   }
-  #root .container-left .text-left{
+  #root .container-left .text-left {
     font-size: 1rem;
   }
-
-  .form{
+  .form {
     width: 35%;
   }
-
-  .form h1{
+  .form h1 {
     font-size: 1.2rem;
     text-align: center;
   }
-  #name , #email , #password{
+  #name, #email, #password {
     font-size: 0.9rem;
   }
-  #shared{
+  #shared {
     width: fit-content;
     font-size: 0.8rem;
     margin-top: 10px;
   }
-
-  .img-profile img{
+  .img-profile img {
     width: 80px;
   }
-
-
 }
 
-@media (max-width: 500px){
-
-  #root .container-left img{
+@media (max-width: 500px) {
+  #root .container-left img {
     display: none;
   }
-
-  #root .container-left .text-left{
+  #root .container-left .text-left {
     display: none;
   }
-  #root .container-right{
+  #root .container-right {
     margin-top: 10px;
-  
   }
-
-  #root .container-right #login-form{
+  #root .container-right #login-form {
     width: 80%;
     height: auto;
     text-align: center;
   }
-  #root .container-right #login-form h3{
+  #root .container-right #login-form h3 {
     margin-top: 15px;
   }
-  footer{
+  footer {
     height: 5rem;
     padding: 0;
     font-size: 0.7rem;
-
   }
-  .form{
+  .form {
     width: 50%;
   }
-  .form h1{
+  .form h1 {
     text-align: center;
   }
-  #name , #email , #password{
+  #name, #email, #password {
     font-size: 0.8rem;
     margin-top: 5%;
   }
-
-  .btn{
+  .btn {
     font-size: 1rem;
   }
-  .registerWithGoogle p{
+  .registerWithGoogle p {
     font-size: 0.8rem;
   }
-  #iniciarConGoogle{
+  #iniciarConGoogle {
     margin-top: 0;
   }
-  #shared{
+  #shared {
     width: fit-content;
     font-size: 0.8rem;
     margin-top: 10px;
   }
-  .img-profile img{
+  .img-profile img {
     width: 60px;
   }
-  .banner-left{
+  .banner-left {
     font-size: 0.8rem;
   }
-
-  .banner-right{
+  .banner-right {
     font-size: 0.5rem;
     padding: 10px;
   }
-  .post-head .user-photo{
+  .post-head .user-photo {
     border-radius: 50%;
     width: 60px;
   }
-  .icon-user, .icon-newspaper, .icon-exit{
+  .icon-user, .icon-newspaper, .icon-exit {
     margin-left: 0px;
   }
-
-
-
 }
-
-
