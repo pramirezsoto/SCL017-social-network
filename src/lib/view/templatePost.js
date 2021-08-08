@@ -1,4 +1,4 @@
-export const postElement = (postId , postData, countLikes) => {
+export const postElement = (postId , postData, countLikes, dataLike) => {
 
    const posting = document.createElement('div');
    posting.classList.add('post');
@@ -6,6 +6,14 @@ export const postElement = (postId , postData, countLikes) => {
 
    const dateString = postDate.toLocaleDateString();
    const timeString = postDate.toLocaleTimeString();
+
+   let className = "";
+   console.log(dataLike)
+   if (dataLike == true){
+      className = "active"
+   }
+  
+  
   
    const newPosting = `
    <div class="post-head" id="${postId}">
@@ -22,7 +30,7 @@ export const postElement = (postId , postData, countLikes) => {
    <div class="posting">${postData.content}</div>
    <hr>
    <div class="icons">
-      <span class="icon-heart like" href="">${countLikes}</span>
+      <a class="icon-heart like ${className}">${countLikes}</a>
    </div>
    <hr>`;
 

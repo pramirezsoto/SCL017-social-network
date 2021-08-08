@@ -32,16 +32,21 @@ export const firestoreRead = () => {
                 firebase.firestore().collection("posts").doc(doc.id).collection("users").doc(uid).get() 
                 .then((userLikes) =>{
                     
+                    let dataLike;
                     if(userLikes.data() != undefined ){
                         console.log('user le ha dado like')
+                        dataLike = true;
+                        
+
                     }else{
                         console.log('user no ha dado like')
+                        dataLike = false;
                     }
                     
                     console.log(doc.data())
                     let countLikes = doc.data().countLikes;
                     
-                    const containerOnePost = postElement(doc.id, doc.data(), countLikes);
+                    const containerOnePost = postElement(doc.id, doc.data(), countLikes, dataLike);
                     
                     containerPosts.appendChild(containerOnePost);
                     

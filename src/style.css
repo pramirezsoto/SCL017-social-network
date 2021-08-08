@@ -584,16 +584,32 @@ padding: 3px;
   height: 20px;
   cursor: pointer;
   text-decoration: none;
-  color: pink;
+  
+
   
 }
+
+.icon-heart .active{
+  color: red
+}
+
+
 .icon-heart:hover{
     color: red;
 
 }
 .icon-heart:active{
-  color: red;
+transform: scale(.9);
+
 }
+.active{
+   color: red;
+}
+
+.icon-hear, .desactive{
+  color:#000000
+}
+
 
 @media (max-width: 780px){
   #root .container-right #login-form {
