@@ -9,17 +9,17 @@ import { createUserWithPassword, signInWithPassword, signInWithGoogle, currentUs
 
 //cambiar la url para que no se vea el gatito
 export const changeRoute = (hash) => {
-  // hash = '#/register
-  hash = hash.replace('#', '');
-  // hash = '/register'
+    // hash = '#/register
+    hash = hash.replace('#', '');
+    // hash = '/register'
 
-  window.history.replaceState({}, hash.replace('/', ''), hash);
-  // hash.replace('/', '') == 'register'
-  // /register
-  return showTemplate(hash);
+    window.history.replaceState({}, hash.replace('/', ''), hash);
+    // hash.replace('/', '') == 'register'
+    // /register
+    return showTemplate(hash);
 }
 
-export const showTemplate = async(hash) => {
+export const showTemplate = async (hash) => {
     const containerRoot = document.getElementById('root');
 
     // Aquí se carga el footer una sola vez
@@ -93,11 +93,35 @@ export const showTemplate = async(hash) => {
             containerRoot.classList.add('posting');
 
             containerRoot.innerHTML = timeLine().innerHTML;
-            firestoreRead();
 
+            // removemos la imagen del Storage
+            localStorage.removeItem('imageUpload');
+
+            // Aqui se agrega funcion para obtener imagen
+            const uploadImage = document.getElementById("updload-image")
+            uploadImage.addEventListener("change", function () {
+                const archivo = new FileReader();
+                if (this.files && this.files[0]) {
+                    archivo.onload = function (e) {
+                        // Aqui se realiza la previsualizacion de nuestra imagen
+                        const imagePreview = document.getElementById("imagenPrevisualizacion");
+                        imagePreview.style.width = "200px";
+                        imagePreview.style.height = "100px";
+                        imagePreview.src = e.target.result;
+                        localStorage.setItem('imageUpload', e.target.result)
+                    };
+                }
+                archivo.readAsDataURL(this.files[0]);
+            });
+
+
+            firestoreRead();
 
             break;
         case '/savePost':
+            // Obtenemos desde el Storage del Navegador la variable imageUpload con la imagen cargada previamente
+            const imageUpload = localStorage.getItem('imageUpload');
+
             const userActive = currentUser();
             const validation = document.getElementById('post').value;
             if (validation.length == 0) {
@@ -108,7 +132,7 @@ export const showTemplate = async(hash) => {
             //conexion normal
             if (userActive.photoURL == undefined) {
                 userImage = 'img/avatar.png'
-           //conexion por google
+                //conexion por google
             } else {
                 userImage = userActive.photoURL
             }
@@ -120,11 +144,10 @@ export const showTemplate = async(hash) => {
                 timestamp: firebase.firestore.Timestamp.fromDate(new Date()),
                 displayname: userActive.displayName,
                 countLikes: 0,
-
-
+                photoUpload: imageUpload
             };
 
-           
+
             firestoreSave("posts", postData);
 
             window.history.replaceState({}, 'posting', '/posting');
@@ -132,12 +155,12 @@ export const showTemplate = async(hash) => {
     }
 
     //Eliminar post//
- 
-      if (hash.startsWith('/deletePost')) {
-      const docId = hash.replace('/deletePost/', '');
-      await firestoreDelete(docId);
-      
-      window.history.replaceState({}, 'posting', '/posting');
-      showTemplate('/posting');
+
+    if (hash.startsWith('/deletePost')) {
+        const docId = hash.replace('/deletePost/', '');
+        await firestoreDelete(docId);
+
+        window.history.replaceState({}, 'posting', '/posting');
+        showTemplate('/posting');
     }
 };

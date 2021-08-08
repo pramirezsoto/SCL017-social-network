@@ -1,7 +1,7 @@
 export const timeLine = () => {
   const posting = document.createElement('div');
-  
-  const viewPosting =  `
+
+  const viewPosting = `
   <div class="time-line">
     <div class="banner-left">
       <a class="icon-newspaper" href="">Muro</a>
@@ -11,12 +11,14 @@ export const timeLine = () => {
   </div>
     <div class="shared-today">
       <input id="post" class="post-timeline" type="text" placeholder="Que te gustaria compartir hoy?">
-     
+      <label for="updload-image" class="custom-file-upload">
+        <i class="icon-camera"></i>
+      </label>
+      <input id="updload-image" type="file" accept="image/*" style="margin-top: 30px">
+      <img id="imagenPrevisualizacion">
       <button id="shared" class="shared" onclick="window.location='#/savePost'">Publicar</button>
-    
-        <div id="container-posts">
-            
-       </div>
+
+      <div id="container-posts"></div>
     </div>
     
     <div class="banner-right">
@@ -30,7 +32,7 @@ export const timeLine = () => {
     </div>
   </div>
   `;
-  
+
   posting.innerHTML = viewPosting;
   return posting;
 }
