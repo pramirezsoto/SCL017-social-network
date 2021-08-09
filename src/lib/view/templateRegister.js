@@ -1,7 +1,7 @@
 export const register = () => {
-    const saludo = document.createElement('div');
+  const saludo = document.createElement('div');
 
-    const viewSaludo =  `
+  const viewSaludo = `
 
   <form id="register-form" class="form">
     
@@ -28,7 +28,6 @@ export const register = () => {
   <button class="registerWithGoogle" id="registerWithGoogle"><img src="img/google.png" alt="logo google"><p>Registrarse con Google</p></button>
 </div>
 </form>`;
- 
   saludo.innerHTML = viewSaludo;
   return saludo;
-}
+};

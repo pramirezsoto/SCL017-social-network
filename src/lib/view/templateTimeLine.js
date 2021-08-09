@@ -35,4 +35,4 @@ export const timeLine = () => {
 
   posting.innerHTML = viewPosting;
   return posting;
-}
+};
