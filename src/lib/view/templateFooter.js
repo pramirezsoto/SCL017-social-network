@@ -1,8 +1,8 @@
 export const footer = () => {
-  const footer = document.createElement('footer');
-  footer.id = 'footer';
-  footer.className = 'footer';
+  const footerSection = document.createElement('footer');
+  footerSection.id = 'footer';
+  footerSection.className = 'footer';
   const content = '<p>Desarrollado por Nicole Quijada, Paula Ramirez & Nataly Farias</p>';
-  footer.innerHTML = content;
-  return footer;
+  footerSection.innerHTML = content;
+  return footerSection;
 };

@@ -18,12 +18,11 @@ export const showTemplate = async (hash) => {
     case '/login':
       containerRoot.classList.add('login');
       containerRoot.innerHTML = login().innerHTML;
-      const loginForm = document.getElementById('login-form');
-      loginForm.addEventListener('submit', (event) => {
+      document.getElementById('login-form').addEventListener('submit', (event) => {
         event.preventDefault();
         // asignamos a variables los datos del formulario
-        const email = loginForm['email'].value;
-        const password = loginForm['password'].value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
         // aca validaremos los campos de entrada
         if (email.length === 0) {
           alert('Por favor ingrese su email');
@@ -33,8 +32,7 @@ export const showTemplate = async (hash) => {
           signInWithPassword(email, password);
         }
       });
-      const loginWithGoogle = document.getElementById('iniciarConGoogle');
-      loginWithGoogle.addEventListener('click', (event) => {
+      document.getElementById('iniciarConGoogle').addEventListener('click', () => {
         signInWithGoogle();
       });
       break;
@@ -59,8 +57,7 @@ export const showTemplate = async (hash) => {
           createUserWithPassword(email, password, name);
         }
       });
-      const registerWithGoogle = document.getElementById('registerWithGoogle');
-      registerWithGoogle.addEventListener('click', (event) => {
+      document.getElementById('registerWithGoogle').addEventListener('click', () => {
         signInWithGoogle();
       });
       break;
@@ -89,13 +86,13 @@ export const showTemplate = async (hash) => {
       firestoreRead();
       break;
     case '/savePost':
-    // Obtenemos desde el Storage del Navegador la variable imageUpload con la imagen cargada
+      // Obtenemos desde el Storage del Navegador la variable imageUpload con la imagen cargada
       const imageUpload = localStorage.getItem('imageUpload');
       const userActive = currentUser();
       const validation = document.getElementById('post').value;
       if (validation.length === 0) {
         alert('ingresa un campo correcto');
-      } 
+      }
       let userImage;
       // conexion normal
       if (userActive.photoURL === undefined) {
@@ -117,6 +114,9 @@ export const showTemplate = async (hash) => {
       firestoreSave('posts', postData);
       window.history.replaceState({}, 'posting', '/posting');
       showTemplate('/posting');
+      break;
+    default:
+      break;
   }
   // Eliminar post //
   if (hash.startsWith('/deletePost')) {
@@ -129,10 +129,10 @@ export const showTemplate = async (hash) => {
 // cambiar la url para que no se vea el gatito
 export const changeRoute = (hash) => {
   // hash = '#/register
-  hash = hash.replace('#', '');
+  const hashCopy = hash.replace('#', '');
   // hash = '/register'
-  window.history.replaceState({}, hash.replace('/', ''), hash);
+  window.history.replaceState({}, hashCopy.replace('/', ''), hashCopy);
   // hash.replace('/', '') == 'register'
   // /register
-  return showTemplate(hash);
+  return showTemplate(hashCopy);
 };
