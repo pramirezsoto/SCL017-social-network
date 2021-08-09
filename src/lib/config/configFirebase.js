@@ -6,5 +6,5 @@ export const firebaseConfig = {
   storageBucket: 'mochileando-scl-017.appspot.com',
   messagingSenderId: '609827072447',
   appId: '1:609827072447:web:7121ea50f059059db6d90a',
-  measurementId: 'G-1KPH67FRF9'
+  measurementId: 'G-1KPH67FRF9',
 };
