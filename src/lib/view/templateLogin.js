@@ -21,8 +21,7 @@ export const login = () => {
     </form>
     <button id="iniciarConGoogle"><img src="img/google.png" alt="logo google"><h5>iniciar sesión con google</h5></button>
 </div>
-  `
-
+  `;
   first.innerHTML = viewFirst;
   return first;
-}
+};

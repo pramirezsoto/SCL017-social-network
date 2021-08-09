@@ -1,1 +1,1 @@
-export const urlSite =  'http://localhost:5000/';
+export const urlSite = 'http://localhost:5000/';
