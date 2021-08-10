@@ -634,6 +634,9 @@ input[type="file"] {
   cursor: pointer;
   text-decoration: none;
 }
+.icon-heart .like{
+  color: #000000;
+}
 
 .icon-heart .active {
   color: red
@@ -647,7 +650,7 @@ input[type="file"] {
   transform: scale(.9);
 }
 
-.active {
+.icon-heart .active {
   color: red;
 }
 

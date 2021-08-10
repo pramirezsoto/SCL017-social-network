@@ -64,6 +64,7 @@ export const showTemplate = async (hash) => {
       break;
     case '/posting':
       containerRoot.classList.remove('login');
+      // containerRoot.classList.add('posting');
       containerRoot.innerHTML = timeLine().innerHTML;
       // removemos la imagen del Storage
       localStorage.removeItem('imageUpload');
