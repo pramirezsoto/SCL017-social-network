@@ -3,12 +3,12 @@ import { currentUser } from '../auth/authetication.js';
 // guarda los datos
 export const firestoreSave = (collectionName, data) => {
   firebase.firestore().collection(collectionName).add(data)
-    .then((docRef) => {
-      console.log('Document written with ID: ', docRef.id);
-    })
-    .catch((error) => {
-      console.error('Error adding document: ', error);
-    });
+  .then((docRef) => {
+    console.log('Document written with ID: ', docRef.id);
+  })
+  .catch((error) => {
+    console.error('Error adding document: ', error);
+  });
 };
 // conteo de likes
 
@@ -53,41 +53,50 @@ export const firestoreRead = () => {
   const containerPosts = document.getElementById('container-posts');
   containerPosts.innerHTML = '';
   let uid;
-   firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        firebase.auth().onAuthStateChanged((user) => {
-          uid = user.uid;
-          firebase.firestore().collection('posts').doc(doc.id).collection('users')
-            .doc(uid)
-            .get()
-            .then((userLikes) => {
-              let dataLike;
-              if (userLikes.data() !== undefined) {
-                dataLike = true;
-              } else {
-                dataLike = false;
-              }
-              console.log(doc.data());
-              const countLikes = doc.data().countLikes;
-              const containerOnePost = postElement(doc.id, doc.data(), countLikes, dataLike);
-              containerPosts.appendChild(containerOnePost);
-              containerOnePost.lastElementChild.previousElementSibling.lastElementChild.addEventListener('click', likesCount, firestoreLike);
-            });
-        });
+  firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      firebase.auth().onAuthStateChanged((user) => {
+        uid = user.uid;
+        firebase.firestore().collection('posts').doc(doc.id).collection('users')
+        .doc(uid)
+        .get()
+        .then((userLikes) => {
+          let dataLike;
+          if (userLikes.data() !== undefined) {
+            dataLike = true;
+          } else {
+            dataLike = false;
+          }
+          console.log(doc.data());
+          const countLikes = doc.data().countLikes;
+          const containerOnePost = postElement(doc.id, doc.data(), countLikes, dataLike);
+          containerPosts.appendChild(containerOnePost);
+          const eventClickLike =  containerOnePost.lastElementChild.previousElementSibling.lastElementChild;
+          eventClickLike.addEventListener('click', likesCount, firestoreLike)
+          if(eventClickLike.className === 'icon-heart'){
+            eventClickLike.classList.remove('icon-heart');
+            eventClickLike.classList.add('icon-heart active')
+          } else if(eventClickLike.classList === 'icon-heart active'){
+            eventClickLike.classList.remove('icon-heart active');
+            eventClickLike.classList.add('icon-heart')
+          } 
+        })
       });
-    })
-    .catch((error) => {
-      console.log(error);
     });
+  })
+  
+  .catch((error) => {
+    console.log(error);
+  });
 };
 //  Eliminar post //
 export const firestoreDelete = async (docId) => {
   await firebase.firestore().collection('posts').doc(docId).delete()
-    .then(() => {
-      console.log('Document successfully deleted!');
-    })
-    .catch((error) => {
-      console.error('Error removing document: ', error);
-    });
+  .then(() => {
+    console.log('Document successfully deleted!');
+  })
+  .catch((error) => {
+    console.error('Error removing document: ', error);
+  });
 };
