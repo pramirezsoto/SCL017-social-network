@@ -12,8 +12,8 @@ export const firestoreSave = (collectionName, data) => {
 };
 // conteo de likes
 
-export const firestoreLike = (likesPost, typeLike) => {
-  const db = firebase.firestore();
+export const firestoreLike = async (likesPost, typeLike) => {
+  const db = await firebase.firestore();
   const increment = firebase.firestore.FieldValue.increment(1);
   const decrement = firebase.firestore.FieldValue.increment(-1);
   let value;
@@ -53,7 +53,7 @@ export const firestoreRead = () => {
   const containerPosts = document.getElementById('container-posts');
   containerPosts.innerHTML = '';
   let uid;
-  firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
+   firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         firebase.auth().onAuthStateChanged((user) => {
