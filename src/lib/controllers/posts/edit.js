@@ -15,7 +15,6 @@ export const editPost = async () => {
   await firebase.auth().onAuthStateChanged(async (user) => {
     const content = document.getElementById('post').value;
     const docId = document.getElementById('postId').value;
-
     const postAEditar = {
       content: content,
       useruid: user.uid

@@ -111,6 +111,6 @@ export const firestoreEdit = async (docId, post) => {
   const doc = await firebase.firestore().collection('posts').doc(docId)
   return await doc.update({
       content: post.content,
-      useruid: post.uid
+      useruid: post.useruid
   });
 }
