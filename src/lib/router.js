@@ -76,8 +76,8 @@ export const showTemplate = async (hash) => {
           archivo.onload = function (e) {
           // Aqui se realiza la previsualizacion de nuestra imagen
             const imagePreview = document.getElementById('imagenPrevisualizacion');
-            imagePreview.style.width = '200px';
-            imagePreview.style.height = '100px';
+            imagePreview.style.width = '50%';
+            // imagePreview.style.height = '100%';
             imagePreview.src = e.target.result;
             localStorage.setItem('imageUpload', e.target.result);
           };
@@ -93,7 +93,7 @@ export const showTemplate = async (hash) => {
 
         const botonDeEditar = document.getElementById('shared2');
         botonDeEditar.style = 'display: block';
-        
+
 
         editPostInput(e);
       }

@@ -537,7 +537,7 @@ footer p {
 }
 
 .posting .content {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 input[type="file"] {
@@ -554,7 +554,6 @@ input[type="file"] {
 .posting .image-upload {
   border-radius: 5px;
   width: 75%;
-  height: 300px;
 }
 
 .time-line {
@@ -752,8 +751,16 @@ input[type="file"] {
   .post-head .user-photo {
     border-radius: 50%;
     width: 60px;
+    margin-bottom: 10px;
   }
   .icon-user, .icon-newspaper, .icon-exit {
     margin-left: 0px;
   }
+  .posting .image-upload {
+    width: 100%;
+  }
+  .posting .content {
+    font-size: 1rem;
+  }
+  
 }
