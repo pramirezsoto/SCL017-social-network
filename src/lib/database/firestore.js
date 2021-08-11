@@ -98,6 +98,7 @@ export const firestoreDelete = async (docId) => {
   await firebase.firestore().collection('posts').doc(docId).delete()
     .then(() => {
       console.log('Document successfully deleted!');
+      alert("¿Estas seguro que quieres eliminar tu post?");
     })
     .catch((error) => {
       console.error('Error removing document: ', error);

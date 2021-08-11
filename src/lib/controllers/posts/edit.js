@@ -1,7 +1,7 @@
 import { firestoreEdit } from "../../database/firestore.js";
 
 export const editPostInput = (e) => {
-    const posting = e.srcElement.closest('.post').querySelector('.posting').innerHTML;
+    const posting = e.srcElement.closest('.post').querySelector(".content").innerHTML;
     const post = document.getElementById('post');
     post.value = posting;
 }
