@@ -3,17 +3,17 @@ import { currentUser } from '../auth/authetication.js';
 // guarda los datos
 export const firestoreSave = (collectionName, data) => {
   firebase.firestore().collection(collectionName).add(data)
-  .then((docRef) => {
-    console.log('Document written with ID: ', docRef.id);
-  })
-  .catch((error) => {
-    console.error('Error adding document: ', error);
-  });
+    .then((docRef) => {
+      console.log('Document written with ID: ', docRef.id);
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
 };
 // conteo de likes
 
-export const firestoreLike = async (likesPost, typeLike) => {
-  const db = await firebase.firestore();
+export const firestoreLike =  (likesPost, typeLike) => {
+  const db = firebase.firestore();
   const increment = firebase.firestore.FieldValue.increment(1);
   const decrement = firebase.firestore.FieldValue.increment(-1);
   let value;
@@ -49,11 +49,11 @@ const likesCount = (event) => {
 };
 
 // leer y pintar los datos
-export const firestoreRead = () => {
+export const firestoreRead = async () => {
   const containerPosts = document.getElementById('container-posts');
   containerPosts.innerHTML = '';
   let uid;
-  firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
+  await firebase.firestore().collection('posts').orderBy('timestamp', 'desc').get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       firebase.auth().onAuthStateChanged((user) => {
@@ -80,12 +80,15 @@ export const firestoreRead = () => {
           } else if(eventClickLike.classList === 'icon-heart active'){
             eventClickLike.classList.remove('icon-heart active');
             eventClickLike.classList.add('icon-heart')
-          } 
+          }
         })
       });
+    })
+    .catch((error) => {
+      console.log(error);
     });
   })
-  
+
   .catch((error) => {
     console.log(error);
   });
@@ -93,13 +96,14 @@ export const firestoreRead = () => {
 //  Eliminar post //
 export const firestoreDelete = async (docId) => {
   await firebase.firestore().collection('posts').doc(docId).delete()
-  .then(() => {
-    console.log('Document successfully deleted!');
-  })
-  .catch((error) => {
-    console.error('Error removing document: ', error);
-  });
-};
+    .then(() => {
+      console.log('Document successfully deleted!');
+    })
+    .catch((error) => {
+      console.error('Error removing document: ', error);
+    });
+
+}
 
 //Editar post//
 export const firestoreEdit = async (docId, post) => {

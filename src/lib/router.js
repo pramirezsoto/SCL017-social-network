@@ -86,6 +86,7 @@ export const showTemplate = async (hash) => {
       });
 
       await firestoreRead();
+
       const loQueDebeHacerElBotonDeEditar = (e) => {
         const botonDePublicar = document.getElementById('shared');
         botonDePublicar.style = "display: none";
@@ -96,10 +97,16 @@ export const showTemplate = async (hash) => {
         editPostInput(e);
       }
 
-      const botonesDeEditar = document.getElementsByClassName("editar");
-      for (var i = 0; i < botonesDeEditar.length; i++) {
-          botonesDeEditar[i].addEventListener('click', e => loQueDebeHacerElBotonDeEditar(e), false);
-      }
+      const timer = setInterval(() => {
+        const botonesDeEditar = document.getElementsByClassName("editar");
+        for (var i = 0; i < botonesDeEditar.length; i++) {
+            botonesDeEditar[i].addEventListener('click', e => loQueDebeHacerElBotonDeEditar(e), false);
+        }
+
+        if (botonesDeEditar.length != 0) {
+          clearInterval(timer);
+        }
+      }, 1000)
 
       break;
     case '/savePost':
