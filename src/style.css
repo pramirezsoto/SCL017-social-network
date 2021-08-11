@@ -634,11 +634,15 @@ input[type="file"] {
   cursor: pointer;
   text-decoration: none;
 }
+
+#shared2 {
+  display: none;
+}
 .icon-heart .like{
   color: #000000;
 }
 
-.icon-heart .active {
+.active {
   color: red
 }
 
@@ -681,6 +685,8 @@ input[type="file"] {
     font-size: 0.8rem;
     margin-top: 10px;
   }
+ 
+
   .img-profile img {
     width: 80px;
   }

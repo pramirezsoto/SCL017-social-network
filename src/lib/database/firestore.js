@@ -40,12 +40,24 @@ const likesCount = (event) => {
     postid: saveId,
   };
   let typeChange;
-  if (objectData.userid && objectData.postid === event) {
+  const heart = event.srcElement;
+  let likeCurrentNumber = parseInt(heart.innerHTML);
+  console.log(heart.className)
+  if (heart.className === 'icon-heart like active') {
     typeChange = 'decrement';
+    likeCurrentNumber = likeCurrentNumber - 1;
+    heart.classList.remove("active");  
   } else {
     typeChange = 'increment';
+    likeCurrentNumber = likeCurrentNumber + 1;
+    heart.classList.add('active')
   }
   firestoreLike(objectData, typeChange);
+  console.log('funciona like')
+  heart.innerHTML = likeCurrentNumber;
+
+
+
 };
 
 // leer y pintar los datos
@@ -72,15 +84,7 @@ export const firestoreRead = async () => {
           const countLikes = doc.data().countLikes;
           const containerOnePost = postElement(doc.id, doc.data(), countLikes, dataLike);
           containerPosts.appendChild(containerOnePost);
-          const eventClickLike =  containerOnePost.lastElementChild.previousElementSibling.lastElementChild;
-          eventClickLike.addEventListener('click', likesCount, firestoreLike)
-          if(eventClickLike.className === 'icon-heart'){
-            eventClickLike.classList.remove('icon-heart');
-            eventClickLike.classList.add('icon-heart active')
-          } else if(eventClickLike.classList === 'icon-heart active'){
-            eventClickLike.classList.remove('icon-heart active');
-            eventClickLike.classList.add('icon-heart')
-          }
+          containerOnePost.lastElementChild.previousElementSibling.lastElementChild.addEventListener('click', likesCount, firestoreLike);
         })
       });
     })

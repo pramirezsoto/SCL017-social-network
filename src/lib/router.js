@@ -89,10 +89,11 @@ export const showTemplate = async (hash) => {
 
       const loQueDebeHacerElBotonDeEditar = (e) => {
         const botonDePublicar = document.getElementById('shared');
-        botonDePublicar.style = "display: none";
+        botonDePublicar.style = 'display: none';
 
         const botonDeEditar = document.getElementById('shared2');
-        botonDeEditar.style = "display: block";
+        botonDeEditar.style = 'display: block';
+        
 
         editPostInput(e);
       }
