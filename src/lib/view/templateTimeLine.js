@@ -6,7 +6,7 @@ export const timeLine = () => {
     <div class="banner-left">
       <a class="icon-newspaper" href="">Muro</a>
       <a class="icon-user" href="">Perfil</a>
-      <a class="icon-exit" href="">Cerrar sesión</a>
+      <a class="icon-exit" href="/">Cerrar sesión</a>
   </div>
     <div class="shared-today">
       <input id="post" class="post-timeline" type="text" placeholder="Que te gustaria compartir hoy?">
